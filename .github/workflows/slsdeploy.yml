@@ -22,18 +22,18 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
-      - name: Sync Yuque
+      - name: Sync yuque
         env:
           YUQUE_TOKEN: ${{secrets.YUQUE_TOKEN}}
         run: npm run sync
-      - name: Run Build
+      - name: Build hexo
         run: npm run build
-      - name: Auto deploy
+      - name: Serverless deploy
         env: # Or as an environment variable
           STAGE: prod
           SERVERLESS_PLATFORM_VENDOR: tencent
           TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
           TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
-        run: npm run publish
+        run: npm run deploy:sls
