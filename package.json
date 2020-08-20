@@ -1,0 +1,39 @@
+{
+  "name": "hexo-site",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "hexo generate",
+    "clean": "hexo clean",
+    "deploy": "hexo deploy",
+    "dev": "hexo server",
+    "sync": "quexo sync",
+    "deploy:sls": "sls deploy --debug"
+  },
+  "hexo": {
+    "version": "5.0.2"
+  },
+  "yuqueConfig": {
+    "login": "jianjunxie",
+    "repo": "kb",
+    "mdNameFormat": "title",
+    "postPath": "source/_posts/yq",
+    "imagePath": "source/images/post",
+    "saveImage": true
+  },
+  "dependencies": {
+    "hexo": "^5.0.0",
+    "hexo-generator-archive": "^1.0.0",
+    "hexo-generator-category": "^1.0.0",
+    "hexo-generator-index": "^2.0.0",
+    "hexo-generator-tag": "^1.0.0",
+    "hexo-renderer-ejs": "^1.0.0",
+    "hexo-renderer-marked": "^3.0.0",
+    "hexo-renderer-stylus": "^2.0.0",
+    "hexo-server": "^2.0.0"
+  },
+  "devDependencies": {
+    "quexo": "^1.6.7",
+    "serverless": "^1.79.0"
+  }
+}

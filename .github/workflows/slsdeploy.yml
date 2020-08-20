@@ -1,0 +1,39 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: serverless CI
+
+on:
+  repository_dispatch:
+    types: [start, opened, deleted]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install Dependencies
+        run: npm install
+      - name: Sync Yuque
+        env:
+          YUQUE_TOKEN: ${{secrets.YUQUE_TOKEN}}
+        run: npm run sync
+      - name: Run Build
+        run: npm run build
+      - name: Auto deploy
+        env: # Or as an environment variable
+          STAGE: prod
+          SERVERLESS_PLATFORM_VENDOR: tencent
+          TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
+          TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
+        run: npm run publish
