@@ -7,24 +7,27 @@ rss: /atom.xml
 # Content
 excerpt_link: Read More
 fancybox: true
-
+search:
+  path: search.xml
+  field: post
+  content: true
 # Sidebar
 sidebar: right
 widgets:
-- category
-- tag
-- tagcloud
-- archive
-- recent_posts
+  - category
+  - tag
+  - tagcloud
+  - archive
+  - recent_posts
 
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:
-# - category
-# - tagcloud
-# - archive
+  - category
+  - tagcloud
+  - archive
 
 # widget behavior
-archive_type: 'monthly'
+archive_type: "monthly"
 show_count: false
 
 # Miscellaneous

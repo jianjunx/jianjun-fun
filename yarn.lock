@@ -3662,6 +3662,14 @@ hexo-generator-index@^2.0.0:
     hexo-pagination "1.0.0"
     timsort "^0.3.0"
 
+hexo-generator-search@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.npmjs.org/hexo-generator-search/-/hexo-generator-search-2.4.0.tgz#f5abbbbbe35299f52c2554bb89845d0a4fab6c9b"
+  integrity sha512-470q6Cpu6xHIPMXN+rQjCQkn/ii4e8XJRBXCmKs+B1jGQNrT7K3geqfyd5pqGiGi6bh5yY+mNqwGw5r2sZZtzA==
+  dependencies:
+    nunjucks "^3.0.1"
+    utils-merge "^1.0.0"
+
 hexo-generator-tag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/hexo-generator-tag/-/hexo-generator-tag-1.0.0.tgz#54ec23de9409c75584ea81e36057a59031b022f1"
@@ -5291,7 +5299,7 @@ number-is-nan@^1.0.0:
   resolved "https://registry.npmjs.org/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nunjucks@^3.2.1:
+nunjucks@^3.0.1, nunjucks@^3.2.1:
   version "3.2.2"
   resolved "https://registry.npmjs.org/nunjucks/-/nunjucks-3.2.2.tgz#45f915fef0f89fbab38c489dc85025f64859f466"
   integrity sha512-KUi85OoF2NMygwODAy28Lh9qHmq5hO3rBlbkYoC8v377h4l8Pt5qFjILl0LWpMbOrZ18CzfVVUvIHUIrtED3sA==
@@ -6002,10 +6010,10 @@ queue@^4.5.0:
   dependencies:
     inherits "~2.0.0"
 
-quexo@^1.6.7:
-  version "1.6.7"
-  resolved "https://registry.npmjs.org/quexo/-/quexo-1.6.7.tgz#66d9702fbe635851c51ddcdbb51f25950416ef9c"
-  integrity sha512-MNXGm1/7bHbDtsQeF6Tl/EitmakupJ9666TtrejLP3mkP2EAYMd3caAk6AYqkRQsyVCOtIFa1vjo2JXfd7KVbg==
+quexo@^1.6.8:
+  version "1.6.8"
+  resolved "https://registry.npmjs.org/quexo/-/quexo-1.6.8.tgz#98d8b82be905db012b2853d65a90c648301cbdbb"
+  integrity sha512-BsajPeP+Pw/GTC4e7VdUTpzCVnv8PaU3paD7Agkw8cfW0rVYVzxCJNiNAqsi+OJvVxZ2UP1KCqJ984idzwVqIw==
   dependencies:
     "@yuque/sdk" "^1.1.1"
     chalk "^2.4.1"
@@ -7965,7 +7973,7 @@ utility@^1.16.1:
     mz "^2.7.0"
     unescape "^1.0.1"
 
-utils-merge@1.0.1:
+utils-merge@1.0.1, utils-merge@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
