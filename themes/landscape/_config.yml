@@ -3,14 +3,11 @@ menu:
   Home: /
   Archives: /archives
 rss: /atom.xml
-
+logo: /images/upload/logo.png
 # Content
 excerpt_link: Read More
 fancybox: true
-search:
-  path: search.xml
-  field: post
-  content: true
+
 # Sidebar
 sidebar: right
 widgets:
@@ -27,13 +24,13 @@ index_widgets:
   - archive
 
 # widget behavior
-archive_type: "monthly"
+archive_type: 'monthly'
 show_count: false
-
+ribbon_flow: true
 # Miscellaneous
 google_analytics:
 gauges_analytics:
-favicon: /favicon.png
+favicon: /images/upload/favicon.png
 twitter:
 google_plus:
 fb_admins:
