@@ -2,7 +2,7 @@
 title: Linux下git自动保存用户名和密码
 urlname: ya7h3c
 date: 2020-08-17 14:31:45 +0800
-tags: [git]
+tags: [Git, Linux, Vue, Jsx]
 categories: [技巧]
 ---
 

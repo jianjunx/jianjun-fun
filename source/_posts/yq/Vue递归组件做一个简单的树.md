@@ -2,8 +2,8 @@
 title: Vue递归组件做一个简单的树
 urlname: hh4yw4
 date: 2020-08-21 10:47:28 +0800
-tags: [vue,递归]
-categories: [前端,组件]
+tags: [Vue, 递归]
+categories: [前端, 组件]
 ---
 
 工作中要开发一个树形菜单翻了翻官网发现 Vue 有递归组件的功能，下面记录下用递归组件实现一个树组件。
@@ -49,7 +49,7 @@ template: '<div><stack-overflow></stack-overflow></div>'
 </template>
 <script>
   export default {
-    name: "tree-component",
+    name: 'tree-component',
     props: {
       datas: {
         type: Array,
@@ -69,27 +69,27 @@ template: '<div><stack-overflow></stack-overflow></div>'
   </div>
 </template>
 <script>
-  import TreeComponent from "../components/tree-component";
+  import TreeComponent from '../components/tree-component';
 
   export default {
     components: { TreeComponent },
     data: () => ({
-      tags: ["vue", "js", "node", "vue", "js", "node"],
+      tags: ['vue', 'js', 'node', 'vue', 'js', 'node'],
       treeData: [
         {
-          title: "安徽",
+          title: '安徽',
           id: 1,
           chilren: [
             {
-              title: "合肥",
+              title: '合肥',
               id: 101,
             },
             {
-              title: "阜阳",
+              title: '阜阳',
               id: 102,
               chilren: [
                 {
-                  title: "颍州区",
+                  title: '颍州区',
                   id: 10201,
                 },
               ],
@@ -97,19 +97,19 @@ template: '<div><stack-overflow></stack-overflow></div>'
           ],
         },
         {
-          title: "广东",
+          title: '广东',
           id: 2,
           chilren: [
             {
-              title: "广州",
+              title: '广州',
               id: 201,
             },
             {
-              title: "深圳",
+              title: '深圳',
               id: 202,
               chilren: [
                 {
-                  title: "南山区",
+                  title: '南山区',
                   id: 20201,
                 },
               ],

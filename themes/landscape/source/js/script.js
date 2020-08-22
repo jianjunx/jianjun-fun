@@ -243,4 +243,23 @@
     var $manNav = $(mainNav);
     if ($manNav.attr('href') == pathname) $manNav.addClass('nav-active');
   }
+
+  // tag cloude
+  var tagCloud = $('.tags-list').children('a');
+  var maxSize = 0;
+  var tagItemArr = [];
+  for (let tag = 0; tag < tagCloud.length; tag++) {
+    var tagItem = $(tagCloud[tag]);
+    var oldSize = tagItem.css('font-size').slice(0, -2);
+    if (oldSize > maxSize) maxSize = oldSize;
+    tagItemArr.push({
+      ele: tagItem,
+      size: oldSize,
+    });
+  }
+  console.log(maxSize);
+  tagItemArr.forEach(function (v) {
+    v.ele.css('font-size', v.size * 1.5);
+    v.ele.css('opacity', v.size / maxSize);
+  });
 })(jQuery);

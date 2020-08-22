@@ -1,1 +1,10 @@
-<%- partial('_partial/article', {post: page, index: false}) %>
+
+<% if(page.type === 'tags') {%> 
+  <%- partial('_partial/tags',{post: page, tags: site.tags, index: false}) %> 
+<% } else if(page.type ==='categorys') {%>
+ <%- partial('_partial/categorys', {post: page,categorys:site.categories, index: false}) %> 
+ 
+ <% } else {%> <%- partial('_partial/article',{post: page, index: false}) %> 
+ 
+<% }%>
+
