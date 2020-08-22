@@ -18,19 +18,21 @@
 <% if (theme.valine){ %>
 <script type="text/javascript" src="/js/valine.min.js"></script>
 <script>
-  (function (pathname) {
-    if (pathname.indexOf('html') != -1) {
-      new Valine({
-        el: '#vcomments',
-        appId: '<%= theme.valine.appId %>',
-        appKey: '<%= theme.valine.appKey %>',
-        avatar: 'robohash',
-        recordIP: true,
-        visitor: true,
-        path: pathname,
-      });
-    }
-  })(location.pathname);
+  (function (pathname, appId, appKey) {
+    new Valine({
+      el: '#vcomments',
+      appId: appId,
+      appKey: appKey,
+      avatar: 'robohash',
+      recordIP: true,
+      visitor: true,
+      path: pathname,
+    });
+  })(
+    location.pathname,
+    '<%= theme.valine.appId %>',
+    '<%= theme.valine.appKey %>',
+  );
 </script>
 <% } %> <% if (theme.ribbon_flow){ %>
 <script type="text/javascript" src="/js/ribbons.js"></script>
