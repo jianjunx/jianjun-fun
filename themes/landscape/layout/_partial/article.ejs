@@ -29,13 +29,14 @@
     </header>
     <% } %>
     <div class="article-entry" itemprop="articleBody">
-      <% if (index){ %> <%- post.excerpt ? post.excerpt : (function(params) {
-      var str =
-      params.replace(/<(style|script|iframe)[^>]*?>[\s\S]+?<\/\1\s*>/gi, '')
-      .replace(/<[^>]+?>/g, '') .replace(/\s+/g, ' ') .replace(/ /g, ' ')
-      .replace(/>/g, ' '); return `
-      <p>${str.slice(0, 300)}...</p>
-      `}(post.content)) %> <% if (theme.excerpt_link){ %>
+      <% if (index){ %>
+      <p class="index-excerpt">
+        <%- post.excerpt ? post.excerpt : (function(params) { var str =
+        params.replace(/<(style|script|iframe)[^>]*?>[\s\S]+?<\/\1\s*>/gi, '')
+        .replace(/<[^>]+?>/g, '') .replace(/\s+/g, ' ') .replace(/ /g, ' ')
+        .replace(/>/g, ' '); return str.slice(0, 300)}(post.content)) %>...
+      </p>
+      <% if (theme.excerpt_link){ %>
       <p class="article-more-link">
         <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
       </p>
