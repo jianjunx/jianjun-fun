@@ -1,15 +1,20 @@
 #header
-  position: relative
+  position: fixed
+  width 1202px
+  top 10px
+  left 50%
+  transform translateX(-50%)
+  border-radius 8px
   background-color #fff
-  border-bottom: 1px solid color-border
-
+  box-shadow: 0 0 8px #ddd
 #header-outer
   height: 100%
   position: relative
+  padding 0
 
 #header-inner
   position: relative
-  overflow: hidden
+  // overflow: hidden
 
 #main-nav
   float: left
@@ -63,61 +68,69 @@ $nav-link
 
 #sub-nav
   float: right
-  margin-right: -15px
+  // margin-right: -15px
 
-#nav-rss-link
-  &:before
-    content: "\f09e"
+// #nav-rss-link
+//   &:before
+//     content: "\f09e"
 
-#nav-search-btn
-  &:before
-    content: "\f002"
+// #nav-search-btn
+//   &:before
+//     content: "\f002"
 
 #search-form-wrap
-  position: absolute
-  top: 15px
-  width: 150px
-  height: 30px
-  right: -150px
-  opacity: 0
-  transition: 0.2s ease-out
-  &.on
-    opacity: 1
-    right: 0
-  @media mq-mobile
-    width: 100%
-    right: -100%
-
-.search-form
-  position: absolute
-  top: 0
-  left: 0
-  right: 0
-  background: #fff
-  padding: 5px 15px
-  border-radius: 15px
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)
+  position relative
+  height 58px
+  display flex
+  align-items: center
+  &:before
+    content: "\f002"
+    font-family: FontAwesome;
+    text-align: center;
+    font-size: 14px;
+    position absolute
+    width 20px
+    height 20px
+    top: 22px;
+    right: 6px;
 
 .search-input
-  border: none
+  height 30px
+  width: 240px
+  border 1px solid color-widget-border
   background: none
   color: color-default
-  width: 100%
   font: 13px font-sans
+  border-radius: 6px
+  box-sizing: border-box
+  padding: 10px
+  padding-right 28px
   outline: none
   &::-webkit-search-results-decoration
   &::-webkit-search-cancel-button
     -webkit-appearance: none
 
-.search-form-submit
-  position: absolute
-  top: 50%
-  right: 10px
-  margin-top: -7px
-  font: 13px font-icon
-  border: none
-  background: none
-  color: #bbb
-  cursor: pointer
-  &:hover, &:focus
-    color: color-link
+.search-drop
+  position absolute
+  display none
+  top 62px
+  right 0
+  width: 280px
+  padding 10px 0
+  background-color #fff
+  border-radius 8px
+  box-shadow 0 0 8px #ddd
+  a
+    display: block
+    text-decoration: none;
+    padding 4px 10px
+    &:hover
+      background-color: color-background
+  h3
+    color: color-default
+    font-size: 16px
+  p
+    color: color-sidebar-text
+    font-size: 12px
+.search-color
+  color: color-link

@@ -1,37 +1,43 @@
 .article
-  margin: block-margin 0
+  // margin: block-margin 0
+  background-color #fff
+  padding 20px 0
+  margin 12px 0
+  border-radius: 8px
+  box-shadow: 0 0 8px #ddd
+
 
 .article-inner
-  @extend $block
   overflow: hidden
 
 .article-meta
   clearfix()
+  margin 15px
+  font-size: 12px
+  color: color-grey
 
 .article-date
-  @extend $block-caption
-  float: left
-
+  font-weight: normal
+  color: color-grey
+  text-decoration: none
+  border-bottom 1px dashed color-grey
 .article-category
-  float: left
-  line-height: 1em
-  color: #ccc
-  text-shadow: 0 1px #fff
-  margin-left: 8px
-  &:before
-    content: "\2022"
-
+  display inline
 .article-category-link
   @extend $block-caption
-  margin: 0 12px 1em
+  font-weight: normal
+  margin-left 0
+  border-bottom 1px solid color-grey
 
 .article-header
   padding: article-padding article-padding 0
+  text-align: center
+
 
 .article-title
   text-decoration: none
   font-size: 2em
-  font-weight: bold
+  font-weight: normal
   color: color-default
   line-height: line-height-title
   transition: color 0.2s
@@ -121,31 +127,35 @@
       height: 100%
       margin-top: 0
 
-.article-more-link a
-  display: inline-block
-  line-height: 1em
-  padding: 6px 15px
-  border-radius: 15px
-  background: color-background
-  color: color-grey
-  text-shadow: 0 1px #fff
-  text-decoration: none
-  &:hover
-    background: color-link
-    color: #fff
+.article-more-link 
+  text-align: center
+  a
+    display: inline-block
+    line-height: 1em
+    padding: 8px 15px
+    font-size: 12px
+    border 1px solid color-default
+    color: color-grey
     text-decoration: none
-    text-shadow: 0 1px darken(color-link, 20%)
+    &:hover
+      background: color-default
+      color: #fff
+      text-decoration: none
 
 .article-footer
   clearfix()
   font-size: 0.85em
   line-height: line-height
   border-top: 1px solid color-border
-  padding-top: line-height
+  padding-top: 36px
   margin: 0 article-padding article-padding
+  display: flex
+  justify-content: center
+  color: color-grey
   a
     color: color-grey
     text-decoration: none
+    border-bottom 1px dashed color-grey
     &:hover
       color: color-default
 
@@ -176,14 +186,7 @@
 #article-nav
   clearfix()
   position: relative
-  @media mq-normal
-    margin: block-margin 0
-    &:before
-      absolute-center(8px)
-      content: ""
-      border-radius: 50%
-      background: color-border
-      box-shadow: 0 1px 2px #fff
+  border-top 1px solid #f1f1f1
 
 .article-nav-link-wrap
   text-decoration: none
@@ -191,7 +194,6 @@
   color: color-grey
   box-sizing: border-box
   margin-top: block-margin
-  text-align: center
   display: block
   &:hover
     color: color-default
@@ -202,14 +204,13 @@
 #article-nav-newer
   @media mq-normal
     float: left
-    text-align: right
-    padding-right: 20px
+    padding-left: 20px
 
 #article-nav-older
   @media mq-normal
     float: right
-    text-align: left
-    padding-left: 20px
+    text-align: right
+    padding-right: 20px
 
 .article-nav-caption
   text-transform: uppercase

@@ -15,15 +15,15 @@
     }, searchAnimDuration);
   };
 
-  $('#nav-search-btn').on('click', function () {
-    if (isSearchAnim) return;
+  // $('#nav-search-btn').on('click', function () {
+  //   if (isSearchAnim) return;
 
-    startSearchAnim();
-    $searchWrap.addClass('on');
-    stopSearchAnim(function () {
-      $('.search-form-input').focus();
-    });
-  });
+  //   startSearchAnim();
+  //   $searchWrap.addClass('on');
+  //   stopSearchAnim(function () {
+  //     $('.search-form-input').focus();
+  //   });
+  // });
 
   $('.search-form-input').on('blur', function () {
     startSearchAnim();
@@ -170,7 +170,12 @@
     method: 'GET',
     timeout: 0,
   };
-
+  $(document).bind('click', function (e) {
+    //id为menu的是菜单，id为open的是打开菜单的按钮
+    if (!$(e.target).parents('#search-form-wrap').length > 0) {
+      $('.search-drop').hide();
+    }
+  });
   $.ajax(settings).done(function (response) {
     var searDrop = $('.search-drop');
     var timer = null;
@@ -196,16 +201,21 @@
               );
             }
             resEles.push(
-              `<a href="${item.url}"><h3>${title}</h3><p>${content}</p><a>`,
+              `<a href="${item.url}"><h3>${title}</h3><p>${content}</p></a>`,
             );
           }
         }
-        searDrop.html(resEles.join(''));
+        if (resEles.length > 0) {
+          searDrop.show();
+          searDrop.html(resEles.join(''));
+        } else {
+          searDrop.hide();
+        }
       }, 300);
     });
   });
   function getContent(target, indexof, content) {
-    var max = 50,
+    var max = 46,
       t_len = target.length;
     var res = content.slice(indexof, max - t_len);
     var r_len = res.length;
@@ -219,7 +229,9 @@
         res = last_content.slice(last_len - n_len);
       }
     }
-    return res.replace(target, `<span class="search-color">${target}</span>`);
+    return (
+      res.replace(target, `<span class="search-color">${target}</span>`) + '...'
+    );
   }
   // header添加current
   var mainNavs = $('#main-nav').children('.nav_link_flag');

@@ -175,7 +175,7 @@
     addRibbon: function () {
       var dir = Math.round(random(1, 9)) > 5 ? 'right' : 'left',
         stop = 1000,
-        hide = 280,
+        hide = 200,
         min = 0 - hide,
         max = this._width + hide,
         movex = 0,
@@ -342,7 +342,7 @@ new Ribbons({
   colorCycleSpeed: 5,
   verticalPosition: 'random',
   horizontalSpeed: 200,
-  ribbonCount: 3,
+  ribbonCount: 4,
   strokeSize: 0,
   parallaxAmount: -0.2,
   animateSections: true,
