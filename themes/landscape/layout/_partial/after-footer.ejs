@@ -15,7 +15,24 @@
 <% } %>
 
 <script src="//cdn.bootcdn.net/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<% if (theme.ribbon_flow){ %>
+<% if (theme.valine){ %>
+<script type="text/javascript" src="/js/valine.min.js"></script>
+<script>
+  (function (pathname) {
+    if (pathname.indexOf('html') != -1) {
+      new Valine({
+        el: '#vcomments',
+        appId: '<%= theme.valine.appId %>',
+        appKey: '<%= theme.valine.appKey %>',
+        avatar: 'robohash',
+        recordIP: true,
+        visitor: true,
+        path: pathname,
+      });
+    }
+  })(location.pathname);
+</script>
+<% } %> <% if (theme.ribbon_flow){ %>
 <script type="text/javascript" src="/js/ribbons.js"></script>
 <% } %> <% if (theme.fancybox){ %> <%- css('fancybox/jquery.fancybox') %> <%-
 js('fancybox/jquery.fancybox.pack') %> <% } %> <%- js('js/script') %> <%-

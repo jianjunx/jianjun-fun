@@ -19,11 +19,13 @@
 
 .archive-article
   avoid-column-break()
+  
 
 .archive-article-inner
-  @extend $block
   padding: 10px
   margin-bottom: 15px
+  @extend $shadow-radius
+
 
 .archive-article-title
   text-decoration: none
@@ -48,22 +50,21 @@
 #page-nav
   clearfix()
   margin: block-margin auto
-  background: #fff
-  border-radius: 3px
+  // padding 10px 0
   text-align: center
   color: color-grey
-  box-shadow: 0 0 8px #ddd
   overflow: hidden
+  @extend $shadow-radius
   a, span
-    padding: 10px 20px
+    padding: 20px 20px
     line-height: 1
     height: 2ex
   a
     color: color-grey
     text-decoration: none
     &:hover
-      background: color-grey
-      color: #fff
+      color: color-link
+      background-color rgba(240, 240, 240, .8)
   .prev
     float: left
   .next
@@ -73,7 +74,21 @@
     @media mq-mobile
       display: none
   .current
-    color: color-default
+    color: color-link
     font-weight: bold
   .space
     color: color-border
+
+.icon-left-arrow
+  font-style: normal
+  &:before 
+    content: "\f060";
+    font-family: FontAwesome;
+    font-size: 12px;
+
+.icon-right-arrow
+  font-style: normal
+  &:before 
+    content: "\f061";
+    font-family: FontAwesome;
+    font-size: 12px;

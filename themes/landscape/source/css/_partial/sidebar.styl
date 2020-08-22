@@ -17,6 +17,11 @@ else
       list-style: disc
     ol
       list-style: decimal
+    li
+      padding 6px 15px
+      &:hover
+        background-color rgba(240, 240, 240, .8)
+
 
 .category-list-count
 .tag-list-count
@@ -33,3 +38,71 @@ else
   a
     margin-right: 5px
     display: inline-block
+
+.personal-avatar
+  text-align: center
+  img
+    border-radius: 8px
+    width 130px
+    height 130px
+  h2
+    line-height: 28px
+    box-sizing: border-box
+    padding 0 15px
+  span 
+    color: color-grey
+    font-size: 12px
+    font-weight: normal
+    box-sizing: border-box
+    padding 0 15px
+
+#nav-rss-link
+  display: block
+  width calc(100% - 30px)
+  padding 8px 0
+  margin 15px 0
+  margin-left 15px
+  line-height 14px
+  border-bottom 1px dashed #999
+  border-top 1px dashed #999
+  float: none;
+  &:hover
+    background-color #fff
+  &:before
+    content: "\f09e"
+
+.widget-count
+  background-color: #ddd;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+  float: right;
+  font-weight: normal;
+  line-height: 1.1;
+  margin: 0.35em 0 0 0;
+  padding: 2px 10px;
+  text-align: center;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+  vertical-align: middle;
+  white-space: nowrap;
+
+.icon-tags
+  font-style: normal
+  &:before 
+    content: "\f02c";
+    font-family: FontAwesome;
+    font-size: 12px;
+
+.icon-category
+  font-style: normal
+  &:before 
+    content: "\f00a";
+    font-family: FontAwesome;
+    font-size: 12px;
+  
+.icon-github
+  font-style: normal
+  &:before 
+    content: "\f09b";
+    font-family: FontAwesome;
+    font-size: 14px;

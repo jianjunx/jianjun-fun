@@ -1,10 +1,7 @@
 .article
-  // margin: block-margin 0
-  background-color #fff
   padding 20px 0
   margin 12px 0
-  border-radius: 8px
-  box-shadow: 0 0 8px #ddd
+  @extend $shadow-radius
 
 
 .article-inner
@@ -164,8 +161,12 @@
   margin-right: 10px
 
 .article-tag-list-link
-  &:before
-    content: "#"
+  &:before 
+    content: "\f02b";
+    font-family: FontAwesome;
+    font-size: 12px;
+    // margin-left -10px
+    transform: translateX(-10px)
 
 .article-comment-link
   float: right
@@ -186,7 +187,7 @@
 #article-nav
   clearfix()
   position: relative
-  border-top 1px solid #f1f1f1
+  border-top 1px solid #fafafa
 
 .article-nav-link-wrap
   text-decoration: none
@@ -323,6 +324,9 @@ $article-share-link
     display: block
     max-width: 100%
     margin: 0 auto
+
+#vcomments
+  padding 15px
 /*
 $article-gallery-ctrl
   position: absolute
@@ -356,3 +360,24 @@ $article-gallery-ctrl
   &:before
     content: "\f054"
     right: 15px*/
+
+.icon-published
+  font-style: normal
+  &:before 
+    content: "\f133";
+    font-family: FontAwesome;
+    font-size: 12px;
+
+.icon-folder
+  font-style: normal
+  &:before 
+    content: "\f114";
+    font-family: FontAwesome;
+    font-size: 12px;
+
+.icon-eye
+  font-style: normal
+  &:before 
+    content: "\f06e";
+    font-family: FontAwesome;
+    font-size: 12px;

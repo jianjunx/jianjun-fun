@@ -9,21 +9,14 @@
         ><% } %> <% for (var i in theme.menu){ %>
         <a
           class="main-nav-link nav_link_flag"
-          href="<%- url_for(theme.menu[i]) %>"
-          ><%= i %></a
+          href="<%- url_for(theme.menu[i].link) %>"
         >
+          <i class="<%- theme.menu[i].icon %>"></i>
+          <span><%= i %></span>
+        </a>
         <% } %>
       </nav>
       <nav id="sub-nav">
-        <!-- <% if (theme.rss){ %>
-        <a
-          id="nav-rss-link"
-          class="nav-icon"
-          href="<%- url_for(theme.rss) %>"
-          title="<%= __('rss_feed') %>"
-        ></a>
-        <% } %> -->
-        <!-- <a id="nav-search-btn" class="nav-icon" title="<%= __('search') %>"></a> -->
         <div id="search-form-wrap">
           <input type="text" class="search-input" />
           <div class="search-drop"></div>

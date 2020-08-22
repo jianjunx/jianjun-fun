@@ -8,8 +8,8 @@
   >
     <!-- <strong class="article-nav-caption"><%= __('newer') %></strong> -->
     <div class="article-nav-title">
-      &lt; <% if (post.prev.title){ %> <%= post.prev.title %> <% } else { %> (no
-      title) <% } %>
+      <i class="icon-left-arrow"></i> <% if (post.prev.title){ %> <%=
+      post.prev.title %> <% } else { %> (no title) <% } %>
     </div>
   </a>
   <% } %> <% if (post.next){ %>
@@ -18,7 +18,9 @@
     id="article-nav-older"
     class="article-nav-link-wrap"
   >
-    <div class="article-nav-title"><%= post.next.title %>&gt;</div>
+    <div class="article-nav-title">
+      <%= post.next.title %>&nbsp;<i class="icon-right-arrow"></i>
+    </div>
   </a>
   <% } %>
 </nav>

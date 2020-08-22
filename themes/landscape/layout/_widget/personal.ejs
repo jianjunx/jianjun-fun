@@ -1,0 +1,41 @@
+<% if (site.posts.length){ %>
+<div class="widget-wrap">
+  <div class="personal-avatar">
+    <img
+      class="personal-avatar"
+      src="<%= theme.personal.avatar%>"
+      alt="personal"
+    />
+    <h2><%= theme.personal.name%></h2>
+    <span><%= theme.personal.description%></span>
+  </div>
+  <% if (theme.rss){ %>
+  <a
+    id="nav-rss-link"
+    class="nav-icon"
+    href="<%- url_for(theme.rss) %>"
+    title="<%= __('rss_feed') %>"
+    >&nbsp;RSS</a
+  >
+  <% } %>
+  <div class="widget">
+    <ul>
+      <% for (var i in theme.lines){ %>
+      <li>
+        <a href="<%- theme.lines[i].link %>">
+          <div>
+            <i class="<%= theme.lines[i].icon %>"></i> <span><%= i %></span>
+          </div>
+
+          <% if (i == '标签'){ %>
+          <span class="widget-count"><%- site.tags.length %></span>
+          <% } %> <% if (i == '分类'){ %>
+          <span class="widget-count"><%- site.categories.length %></span>
+          <% } %>
+        </a>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</div>
+<% } %>

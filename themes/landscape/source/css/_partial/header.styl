@@ -1,12 +1,9 @@
 #header
   position: fixed
-  width 1202px
-  top 10px
-  left 50%
-  transform translateX(-50%)
-  border-radius 8px
-  background-color #fff
-  box-shadow: 0 0 8px #ddd
+  width 100%
+  top 8px
+  
+
 #header-outer
   height: 100%
   position: relative
@@ -14,11 +11,10 @@
 
 #header-inner
   position: relative
-  // overflow: hidden
+  @extend $shadow-radius
 
 #main-nav
   float: left
-  // margin-left: -10px
 
 $nav-link
   float: left
@@ -26,13 +22,13 @@ $nav-link
   text-decoration: none
   transition: opacity 0.2s
   display: block
-  padding: 20px 15px
+  padding: 18px 15px
   &.nav-active
-    border-bottom 1px solid color-link
+    // border-bottom 1px solid color-link
     color: color-link
   &:hover
     color: color-link
-    background-color #fafafa
+    background-color rgba(240, 240, 240, .8)
     
 
 
@@ -43,7 +39,7 @@ $nav-link
   font-size: font-size
   width: font-size
   height: font-size
-  padding: 20px 15px
+  padding: 18px 15px
   position: relative
   cursor: pointer
 
@@ -61,18 +57,11 @@ $nav-link
 
 #main-nav-toggle
   display: none
-  &:before
-    content: "\f0c9"
-  @media mq-mobile
-    display: block
 
 #sub-nav
   float: right
   // margin-right: -15px
 
-// #nav-rss-link
-//   &:before
-//     content: "\f09e"
 
 // #nav-search-btn
 //   &:before
@@ -80,8 +69,9 @@ $nav-link
 
 #search-form-wrap
   position relative
-  height 58px
+  height 56px
   display flex
+  padding-right 20px
   align-items: center
   &:before
     content: "\f002"
@@ -92,16 +82,17 @@ $nav-link
     width 20px
     height 20px
     top: 22px;
-    right: 6px;
+    right: 26px;
+    color: #999
 
 .search-input
   height 30px
   width: 240px
-  border 1px solid color-widget-border
+  border 1px solid #f0f0f0
   background: none
   color: color-default
   font: 13px font-sans
-  border-radius: 6px
+  border-radius: 4px
   box-sizing: border-box
   padding: 10px
   padding-right 28px
@@ -134,3 +125,17 @@ $nav-link
     font-size: 12px
 .search-color
   color: color-link
+
+.icon-home
+  font-style: normal
+  &:before 
+    content: "\f015";
+    font-family: FontAwesome;
+    font-size: 16px;
+
+.icon-archives
+  font-style: normal
+  &:before 
+    content: "\f187";
+    font-family: FontAwesome;
+    font-size: 14px;

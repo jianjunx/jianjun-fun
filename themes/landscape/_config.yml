@@ -1,7 +1,11 @@
 # Header
 menu:
-  Home: /
-  Archives: /archives
+  首页:
+    icon: icon-home
+    link: /
+  归档:
+    icon: icon-archives
+    link: /archives
 rss: /atom.xml
 logo: /images/upload/logo.png
 # Content
@@ -11,11 +15,12 @@ fancybox: true
 # Sidebar
 sidebar: right
 widgets:
-  - category
-  - tag
-  - tagcloud
-  - archive
-  - recent_posts
+  - personal
+  # - category
+  # - tag
+  # - tagcloud
+  # - archive
+  # - recent_posts
 
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:
@@ -23,6 +28,26 @@ index_widgets:
   - tagcloud
   - archive
 
+personal:
+  avatar: /images/upload/avatar.png
+  name: JJ Xie
+  description: 这是一个测试主题这是一个测试主题这是一个测试主题这是一个测试主题这是一个测试主题.
+
+lines:
+  标签:
+    icon: icon-tags
+    link: /tags
+  分类:
+    icon: icon-category
+    link: /categorys
+  GitHub:
+    icon: icon-github
+    link: https://github.com/jianjunx
+
+valine:
+  appId: 'pzmKEXwktJcbFThJyEK0HiUt-9Nh9j0Va'
+  appKey: 'hBrXSEpHp0MSCNHQNpcFfi7J'
+  
 # widget behavior
 archive_type: 'monthly'
 show_count: false

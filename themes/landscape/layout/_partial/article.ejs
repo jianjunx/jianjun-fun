@@ -10,16 +10,26 @@
       <%- partial('post/title', {class_name: 'article-title'}) %>
       <div class="article-meta">
         <span
-          >发表于：<%- partial('post/date', {class_name: 'article-date',
-          date_format: null}) %></span
+          ><i class="icon-published"></i> 发表于：<%- partial('post/date',
+          {class_name: 'article-date', date_format: null}) %></span
         >
         <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-        <span>分类于：<%- partial('post/category') %></span>
+        <span
+          ><i class="icon-folder"></i> 分类于：<%- partial('post/category')
+          %></span
+        >
+        <% if (!index){ %>
+        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+        <span id="<%= post.urlname %>" class="leancloud_visitors">
+          <i class="icon-eye"></i> 阅读次数：
+          <span class="leancloud-visitors-count">0</span>
+        </span>
+        <% } %>
       </div>
     </header>
     <% } %>
     <div class="article-entry" itemprop="articleBody">
-      <% if ( index){ %> <%- post.excerpt ? post.excerpt : (function(params) {
+      <% if (index){ %> <%- post.excerpt ? post.excerpt : (function(params) {
       var str =
       params.replace(/<(style|script|iframe)[^>]*?>[\s\S]+?<\/\1\s*>/gi, '')
       .replace(/<[^>]+?>/g, '') .replace(/\s+/g, ' ') .replace(/ /g, ' ')
@@ -33,26 +43,19 @@
     </div>
     <% if (!index){ %>
     <footer class="article-footer">
-      标签： <% if (post.comments && config.disqus_shortname){ %>
-      <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"
-        ><%= __('comment') %></a
+      <% if (post.comments && config.disqus_shortname){ %>
+      <a
+        href="<%- post.permalink %>#disqus_thread"
+        class="article-comment-link"
+      >
+        <%= __('comment') %></a
       >
       <% } %> <%- partial('post/tag') %>
     </footer>
     <% } %>
   </div>
-  <% if (!index){ %> <%- partial('post/nav') %> <% } %>
+  <% if (!index){ %> <%- partial('post/nav') %> <% } %> <% if (!index &&
+  theme.valine){ %>
+  <section id="vcomments"></section>
+  <% } %>
 </article>
-
-<% if (!index && post.comments && config.disqus_shortname){ %>
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript
-      >Please enable JavaScript to view the
-      <a href="//disqus.com/?ref_noscript"
-        >comments powered by Disqus.</a
-      ></noscript
-    >
-  </div>
-</section>
-<% } %>
