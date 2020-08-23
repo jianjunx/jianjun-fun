@@ -18,6 +18,21 @@
     >&nbsp;RSS</a
   >
   <% } %>
+
+  <!-- icons -->
+  <% if (theme.icons){ %>
+  <div class="icons-wrap">
+    <% for (var i in theme.icons){ %>
+    <a href="<%- theme.icons[i].link %>">
+      <i class="<%= theme.icons[i].icon %>"></i> <%= i %>
+    </a>
+    <% } %>
+  </div>
+  <% } %>
+
+  <!-- lines -->
+  <% if (theme.lines){ %>
+  <span class="line-gap"></span>
   <div class="widget">
     <ul>
       <% for (var i in theme.lines){ %>
@@ -37,5 +52,6 @@
       <% } %>
     </ul>
   </div>
+  <% } %>
 </div>
 <% } %>

@@ -166,7 +166,7 @@
 
   // search
   var settings = {
-    url: '/search-map.json',
+    url: '/search.json',
     method: 'GET',
     timeout: 0,
   };

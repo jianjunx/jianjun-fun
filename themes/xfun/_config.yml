@@ -43,9 +43,23 @@ lines:
   分类:
     icon: icon-category
     link: /categorys
+  XFun:
+    icon: icon-github
+    link: https://github.com/jianjunx/hexo-theme-xfun
+
+icons:
   GitHub:
     icon: icon-github
     link: https://github.com/jianjunx
+  微博:
+    icon: icon-weibo
+    link: https://weibo.com/autoshun
+  知乎:
+    icon: icon-zhihu
+    link: /
+  掘金:
+    icon: icon-juejin
+    link: /
 
 valine:
   appId: 'pzmKEXwktJcbFThJyEK0HiUt-9Nh9j0Va'
