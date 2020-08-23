@@ -56,7 +56,7 @@
     <% } %>
   </div>
   <% if (!index){ %> <%- partial('post/nav') %> <% } %> <% if (!index &&
-  theme.valine){ %>
+  !post.disable_comment && theme.valine){ %>
   <section id="vcomments"></section>
   <% } %>
 </article>

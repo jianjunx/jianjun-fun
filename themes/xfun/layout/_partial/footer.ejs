@@ -1,11 +1,20 @@
 <footer id="footer">
-  <% if (theme.sidebar === 'bottom'){ %>
-    <%- partial('_partial/sidebar') %>
-  <% } %>
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
-      <%= __('powered_by') %> <a href="http://hexo.io/" target="_blank">Hexo</a>
+  <div id="footer-info" class="inner">
+    <div>
+      &copy; <%= date(new Date(), 'YYYY') %>
+      <i class="icon-love footer-love"></i>
+      <%= config.author || config.title %>
+    </div>
+    <div>
+      <!-- <a href="http://beian.miit.gov.cn" target="_blank">粤ICP备19142024号</a> -->
+      粤ICP备19142024号
+      <span class="gap">|</span>
+      由 <a href="http://hexo.io/" target="_blank">Hexo</a> 驱动
+      <span class="gap">|</span>
+      主题 -
+      <a href="https://github.com/jianjunx/hexo-theme-xfun" target="_blank"
+        >XFun</a
+      >
     </div>
   </div>
 </footer>

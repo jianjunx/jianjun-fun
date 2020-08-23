@@ -67,3 +67,44 @@
     content: "\f09b";
     font-family: FontAwesome;
     font-size: 14px;
+
+.icon-exclamation
+  font-style: normal
+  &:before 
+    content: "\f06a";
+    font-family: FontAwesome;
+    font-size: 14px;
+
+.icon-love
+  font-style: normal
+  &:before 
+    content: "\f004";
+    font-family: FontAwesome;
+    font-size: 12px;
+
+
+
+
+
+@keyframes heartbeat {
+    0% {
+    transform:rotate(45deg) scale(0.8,0.8);
+    opacity:1;
+    }
+    50% {
+      transform:rotate(45deg) scale(1,1);
+      opacity:0.8;
+    }
+    50% {
+      transform:rotate(45deg) scale(0.8,0.8);
+      opacity:0.8;
+    }
+    60% {
+      transform:rotate(45deg) scale(1,1);
+      opacity:0.8;
+    }
+    100% {
+      transform:rotate(45deg) scale(0.8,0.8);
+      opacity:1;
+    }
+}

@@ -6,6 +6,9 @@ menu:
   归档:
     icon: icon-archives
     link: /archives
+  关于:
+    icon: icon-exclamation
+    link: /p/about.html
 rss: /atom.xml
 logo: /images/upload/logo.png
 # Content
