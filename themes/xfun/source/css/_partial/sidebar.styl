@@ -112,7 +112,21 @@ else
 
 #toc
   display none
-  
+
+.toc-article
+  box-sizing: border-box
+  // padding 0 10px
+  padding-left 5px
+  padding-right 15px
+
+  li
+    margin-left 10px
+    line-height: 1.8
+  a
+   color: color-default
+   text-decoration: none
+   &:hover
+    border-bottom 1px solid color-default
 
 .toc-fixed
   position: fixed;
@@ -130,3 +144,6 @@ else
   border-radius: 4px
   cursor pointer
   background-color: rgba(0,0,0,.3)
+
+a.toc-active
+  color: color-link

@@ -265,32 +265,64 @@
       v.ele.css("opacity", v.size / maxSize);
     });
   })();
-
+  function setTop() {
+    const body = $("html,body");
+    return function (top) {
+      body.animate(
+        {
+          scrollTop: top,
+          screenLeft: top,
+        },
+        400
+      );
+    };
+  }
+  function getTitles() {
+    const titles = $(
+      ".article-entry h1,.article-entry h2,.article-entry h3,.article-entry h4,.article-entry h5,.article-entry h6"
+    );
+    const eles = [];
+    for (let i = 0; i < titles.length; i++) {
+      const cur = titles[i];
+      const next = titles[i + 1];
+      const param = { id: cur.id };
+      const top = $(cur).offset().top;
+      param.min = i === 0 ? 0 : top;
+      param.max = next ? $(next).offset().top : 99999;
+      eles.push(param);
+    }
+    return eles;
+  }
   // 处理toc
   (function () {
     const TOC_SRC = document.querySelector("#toc-src");
     if (!TOC_SRC) return;
     const TOC = $("#toc");
     const TO_TOP = $(".to-top");
-    TO_TOP.on("click", function () {
-      $("html,body").animate(
-        {
-          scrollTop: 0,
-          screenLeft: 0,
-        },
-        400
-      );
-    });
+    const WINDOW = $(window);
+    const setTopHandler = setTop();
     TOC.append(TOC_SRC);
     TOC.show();
-    const WINDOW = $(window);
+    TOC.css("width", $("#sidebar").width() + "px");
+    TO_TOP.on("click", function () {
+      setTopHandler(0);
+    });
+    $("#toc-src").on("click", "a", function (e) {
+      const href = $(e.target).parent().attr("href");
+      setTopHandler($(decodeURI(href)).offset().top - 70);
+      return false;
+    });
+
     let timer = null;
     const top = TOC.offset().top;
+    const titles = getTitles();
+    console.log(titles);
     document.addEventListener("scroll", function (e) {
       clearTimeout(timer);
       setTimeout(() => {
         const wtop = WINDOW.scrollTop();
         const tocTop = top - wtop;
+        setTocActive(titles, wtop);
 
         if (wtop > 200) {
           TO_TOP.show();
@@ -307,4 +339,13 @@
       }, 100);
     });
   })();
+  function setTocActive(list, top) {
+    for (const { id, max, min } of list) {
+      if (top > min && top <= max) {
+        $(`a[href="#${encodeURI(id)}"]`).addClass("toc-active");
+      } else {
+        $(`a[href="#${encodeURI(id)}"]`).removeClass("toc-active");
+      }
+    }
+  }
 })(jQuery);
