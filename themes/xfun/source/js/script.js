@@ -273,7 +273,7 @@
           scrollTop: top,
           screenLeft: top,
         },
-        400
+        300
       );
     };
   }
@@ -286,9 +286,9 @@
       const cur = titles[i];
       const next = titles[i + 1];
       const param = { id: cur.id };
-      const top = $(cur).offset().top;
+      const top = $(cur).offset().top - 80;
       param.min = i === 0 ? 0 : top;
-      param.max = next ? $(next).offset().top : 99999;
+      param.max = next ? $(next).offset().top - 80 : 99999;
       eles.push(param);
     }
     return eles;
@@ -316,7 +316,6 @@
     let timer = null;
     const top = TOC.offset().top;
     const titles = getTitles();
-    console.log(titles);
     document.addEventListener("scroll", function (e) {
       clearTimeout(timer);
       setTimeout(() => {
