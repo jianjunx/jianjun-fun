@@ -271,6 +271,16 @@
     const TOC_SRC = document.querySelector("#toc-src");
     if (!TOC_SRC) return;
     const TOC = $("#toc");
+    const TO_TOP = $(".to-top");
+    TO_TOP.on("click", function () {
+      $("html,body").animate(
+        {
+          scrollTop: 0,
+          screenLeft: 0,
+        },
+        400
+      );
+    });
     TOC.append(TOC_SRC);
     TOC.show();
     const WINDOW = $(window);
@@ -279,7 +289,14 @@
     document.addEventListener("scroll", function (e) {
       clearTimeout(timer);
       setTimeout(() => {
-        const tocTop = top - WINDOW.scrollTop();
+        const wtop = WINDOW.scrollTop();
+        const tocTop = top - wtop;
+
+        if (wtop > 200) {
+          TO_TOP.show();
+        } else {
+          TO_TOP.hide();
+        }
         if (tocTop < 75) {
           if (TOC.hasClass("toc-fixed")) return;
           TOC.addClass("toc-fixed");
