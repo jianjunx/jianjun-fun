@@ -1,6 +1,6 @@
 (function ($) {
   // Search
-  var $searchWrap = $('#search-form-wrap'),
+  var $searchWrap = $("#search-form-wrap"),
     isSearchAnim = false,
     searchAnimDuration = 200;
 
@@ -25,31 +25,31 @@
   //   });
   // });
 
-  $('.search-form-input').on('blur', function () {
+  $(".search-form-input").on("blur", function () {
     startSearchAnim();
-    $searchWrap.removeClass('on');
+    $searchWrap.removeClass("on");
     stopSearchAnim();
   });
 
   // Share
-  $('body')
-    .on('click', function () {
-      $('.article-share-box.on').removeClass('on');
+  $("body")
+    .on("click", function () {
+      $(".article-share-box.on").removeClass("on");
     })
-    .on('click', '.article-share-link', function (e) {
+    .on("click", ".article-share-link", function (e) {
       e.stopPropagation();
 
       var $this = $(this),
-        url = $this.attr('data-url'),
+        url = $this.attr("data-url"),
         encodedUrl = encodeURIComponent(url),
-        id = 'article-share-box-' + $this.attr('data-id'),
+        id = "article-share-box-" + $this.attr("data-id"),
         offset = $this.offset();
 
-      if ($('#' + id).length) {
-        var box = $('#' + id);
+      if ($("#" + id).length) {
+        var box = $("#" + id);
 
-        if (box.hasClass('on')) {
-          box.removeClass('on');
+        if (box.hasClass("on")) {
+          box.removeClass("on");
           return;
         }
       } else {
@@ -69,74 +69,70 @@
           '<a href="https://plus.google.com/share?url=' +
             encodedUrl +
             '" class="article-share-google" target="_blank" title="Google+"></a>',
-          '</div>',
-          '</div>',
-        ].join('');
+          "</div>",
+          "</div>",
+        ].join("");
 
         var box = $(html);
 
-        $('body').append(box);
+        $("body").append(box);
       }
 
-      $('.article-share-box.on').hide();
+      $(".article-share-box.on").hide();
 
       box
         .css({
           top: offset.top + 25,
           left: offset.left,
         })
-        .addClass('on');
+        .addClass("on");
     })
-    .on('click', '.article-share-box', function (e) {
+    .on("click", ".article-share-box", function (e) {
       e.stopPropagation();
     })
-    .on('click', '.article-share-box-input', function () {
+    .on("click", ".article-share-box-input", function () {
       $(this).select();
     })
-    .on('click', '.article-share-box-link', function (e) {
+    .on("click", ".article-share-box-link", function (e) {
       e.preventDefault();
       e.stopPropagation();
 
       window.open(
         this.href,
-        'article-share-box-window-' + Date.now(),
-        'width=500,height=450',
+        "article-share-box-window-" + Date.now(),
+        "width=500,height=450"
       );
     });
 
   // Caption
-  $('.article-entry').each(function (i) {
+  $(".article-entry").each(function (i) {
     $(this)
-      .find('img')
+      .find("img")
       .each(function () {
-        if ($(this).parent().hasClass('fancybox')) return;
+        if ($(this).parent().hasClass("fancybox")) return;
 
         var alt = this.alt;
 
-        if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+        if (alt) $(this).after('<span class="caption">' + alt + "</span>");
 
         $(this).wrap(
-          '<a href="' +
-            this.src +
-            '" title="' +
-            alt +
-            '" class="fancybox"></a>',
+          '<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>'
         );
       });
 
     $(this)
-      .find('.fancybox')
+      .find(".fancybox")
       .each(function () {
-        $(this).attr('rel', 'article' + i);
+        $(this).attr("rel", "article" + i);
       });
   });
 
   if ($.fancybox) {
-    $('.fancybox').fancybox();
+    $(".fancybox").fancybox();
   }
 
   // Mobile nav
-  var $container = $('#container'),
+  var $container = $("#container"),
     isMobileNavAnim = false,
     mobileNavAnimDuration = 200;
 
@@ -150,116 +146,148 @@
     }, mobileNavAnimDuration);
   };
 
-  $('#main-nav-toggle').on('click', function () {
+  $("#main-nav-toggle").on("click", function () {
     if (isMobileNavAnim) return;
 
     startMobileNavAnim();
-    $container.toggleClass('mobile-nav-on');
+    $container.toggleClass("mobile-nav-on");
     stopMobileNavAnim();
   });
 
-  $('#wrap').on('click', function () {
-    if (isMobileNavAnim || !$container.hasClass('mobile-nav-on')) return;
+  $("#wrap").on("click", function () {
+    if (isMobileNavAnim || !$container.hasClass("mobile-nav-on")) return;
 
-    $container.removeClass('mobile-nav-on');
+    $container.removeClass("mobile-nav-on");
   });
 
   // search
-  var settings = {
-    url: '/search.json',
-    method: 'GET',
-    timeout: 0,
-  };
-  $(document).bind('click', function (e) {
-    //id为menu的是菜单，id为open的是打开菜单的按钮
-    if (!$(e.target).parents('#search-form-wrap').length > 0) {
-      $('.search-drop').hide();
-    }
-  });
-  $.ajax(settings).done(function (response) {
-    var searDrop = $('.search-drop');
-    var timer = null;
-    $('.search-input').on('input', function (event) {
-      var value = event.target.value;
-      if (value.length < 2) return;
-      clearTimeout(timer);
-      timer = setTimeout(function () {
-        var resEles = [];
-        for (var index = 0; index < response.length; index++) {
-          var item = response[index];
-          var reg = RegExp(value);
-          if (reg.test(item.title) || reg.test(item.content)) {
-            var title = item.title.replace(reg, function (match, args) {
-              return `<span class="search-color">${match}</span>`;
-            });
-            var _content = reg.exec(item.content);
-            if (Array.isArray(_content)) {
-              var content = getContent(
-                _content[0],
-                _content['index'],
-                item.content.replace(/\n/g, ''),
+  (function () {
+    var settings = {
+      url: "/search.json",
+      method: "GET",
+      timeout: 0,
+    };
+    $(document).bind("click", function (e) {
+      //id为menu的是菜单，id为open的是打开菜单的按钮
+      if (!$(e.target).parents("#search-form-wrap").length > 0) {
+        $(".search-drop").hide();
+      }
+    });
+    $.ajax(settings).done(function (response) {
+      var searDrop = $(".search-drop");
+      var timer = null;
+      $(".search-input").on("input", function (event) {
+        var value = event.target.value;
+        if (value.length < 2) return;
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          var resEles = [];
+          for (var index = 0; index < response.length; index++) {
+            var item = response[index];
+            var reg = RegExp(value);
+            if (reg.test(item.title) || reg.test(item.content)) {
+              var title = item.title.replace(reg, function (match, args) {
+                return `<span class="search-color">${match}</span>`;
+              });
+              var _content = reg.exec(item.content);
+              if (Array.isArray(_content)) {
+                var content = getContent(
+                  _content[0],
+                  _content["index"],
+                  item.content.replace(/\n/g, "")
+                );
+              }
+              resEles.push(
+                `<a href="${item.url}"><h3>${title}</h3><p>${content}</p></a>`
               );
             }
-            resEles.push(
-              `<a href="${item.url}"><h3>${title}</h3><p>${content}</p></a>`,
-            );
           }
-        }
-        if (resEles.length > 0) {
-          searDrop.show();
-          searDrop.html(resEles.join(''));
-        } else {
-          searDrop.hide();
-        }
-      }, 300);
+          if (resEles.length > 0) {
+            searDrop.show();
+            searDrop.html(resEles.join(""));
+          } else {
+            searDrop.hide();
+          }
+        }, 300);
+      });
     });
-  });
-  function getContent(target, indexof, content) {
-    var max = 46,
-      t_len = target.length;
-    var res = content.slice(indexof, max - t_len);
-    var r_len = res.length;
-    if (r_len < max) {
-      var n_len = max - r_len;
-      var last_content = content.slice(0, indexof);
-      var last_len = last_content.length;
-      if (last_len < n_len) {
-        res = last_content + res;
-      } else {
-        res = last_content.slice(last_len - n_len);
+    function getContent(target, indexof, content) {
+      var max = 46,
+        t_len = target.length;
+      var res = content.slice(indexof, max - t_len);
+      var r_len = res.length;
+      if (r_len < max) {
+        var n_len = max - r_len;
+        var last_content = content.slice(0, indexof);
+        var last_len = last_content.length;
+        if (last_len < n_len) {
+          res = last_content + res;
+        } else {
+          res = last_content.slice(last_len - n_len);
+        }
       }
+      return (
+        res.replace(target, `<span class="search-color">${target}</span>`) +
+        "..."
+      );
     }
-    return (
-      res.replace(target, `<span class="search-color">${target}</span>`) + '...'
-    );
-  }
-  // header添加current
-  var mainNavs = $('#main-nav').children('.nav_link_flag');
+  })();
 
-  for (let nav = 0; nav < mainNavs.length; nav++) {
-    const mainNav = mainNavs[nav];
-    var pathname = location.pathname;
-    if (location.pathname != '/') pathname = pathname.slice(0, -1);
-    var $manNav = $(mainNav);
-    if ($manNav.attr('href') == pathname) $manNav.addClass('nav-active');
-  }
+  // header添加current
+  (function () {
+    var mainNavs = $("#main-nav").children(".nav_link_flag");
+
+    for (let nav = 0; nav < mainNavs.length; nav++) {
+      const mainNav = mainNavs[nav];
+      var pathname = location.pathname;
+      if (location.pathname != "/") pathname = pathname.slice(0, -1);
+      var $manNav = $(mainNav);
+      if ($manNav.attr("href") == pathname) $manNav.addClass("nav-active");
+    }
+  })();
 
   // tag cloude
-  var tagCloud = $('.tags-list').children('a');
-  var maxSize = 0;
-  var tagItemArr = [];
-  for (let tag = 0; tag < tagCloud.length; tag++) {
-    var tagItem = $(tagCloud[tag]);
-    var oldSize = tagItem.css('font-size').slice(0, -2);
-    if (oldSize > maxSize) maxSize = oldSize;
-    tagItemArr.push({
-      ele: tagItem,
-      size: oldSize,
+  (function () {
+    var tagCloud = $(".tags-list").children("a");
+    var maxSize = 0;
+    var tagItemArr = [];
+    for (let tag = 0; tag < tagCloud.length; tag++) {
+      var tagItem = $(tagCloud[tag]);
+      var oldSize = tagItem.css("font-size").slice(0, -2);
+      if (oldSize > maxSize) maxSize = oldSize;
+      tagItemArr.push({
+        ele: tagItem,
+        size: oldSize,
+      });
+    }
+    tagItemArr.forEach(function (v) {
+      v.ele.css("font-size", v.size * 1.5);
+      v.ele.css("opacity", v.size / maxSize);
     });
-  }
-  console.log(maxSize);
-  tagItemArr.forEach(function (v) {
-    v.ele.css('font-size', v.size * 1.5);
-    v.ele.css('opacity', v.size / maxSize);
-  });
+  })();
+
+  // 处理toc
+  (function () {
+    const TOC_SRC = document.querySelector("#toc-src");
+    if (!TOC_SRC) return;
+    const TOC = $("#toc");
+    TOC.append(TOC_SRC);
+    TOC.show();
+    const WINDOW = $(window);
+    let timer = null;
+    const top = TOC.offset().top;
+    document.addEventListener("scroll", function (e) {
+      clearTimeout(timer);
+      setTimeout(() => {
+        const tocTop = top - WINDOW.scrollTop();
+        if (tocTop < 75) {
+          if (TOC.hasClass("toc-fixed")) return;
+          TOC.addClass("toc-fixed");
+        } else {
+          if (!TOC.hasClass("toc-fixed")) return;
+          TOC.removeClass("toc-fixed");
+        }
+      }, 100);
+    });
+  })();
 })(jQuery);

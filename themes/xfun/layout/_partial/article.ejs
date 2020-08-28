@@ -31,10 +31,8 @@
     <div class="article-entry" itemprop="articleBody">
       <% if (index){ %>
       <p class="index-excerpt">
-        <%- post.excerpt ? post.excerpt : (function(params) { var str =
-        params.replace(/<(style|script|iframe)[^>]*?>[\s\S]+?<\/\1\s*>/gi, '')
-        .replace(/<[^>]+?>/g, '') .replace(/\s+/g, ' ') .replace(/ /g, ' ')
-        .replace(/>/g, ' '); return str.slice(0, 300)}(post.content)) %>...
+        <%- post.excerpt ? post.excerpt : strip_html(post.content).slice(0, 300)
+        + '...' %>
       </p>
       <% if (theme.excerpt_link){ %>
       <p class="article-more-link">
@@ -43,6 +41,13 @@
       <% } %> <% } else { %> <%- post.content %> <% } %>
     </div>
     <% if (!index){ %>
+    <div class="entry">
+      <% if (!post.no_toc && !index){ %>
+      <div id="toc-src" class="toc-article">
+        <%- toc(post.content) %>
+      </div>
+      <% } %>
+    </div>
     <footer class="article-footer">
       <% if (post.comments && config.disqus_shortname){ %>
       <a
