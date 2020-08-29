@@ -26,10 +26,10 @@ widgets:
   # - recent_posts
 
 # display widgets at the bottom of index pages (pagination == 2)
-index_widgets:
-  - category
-  - tagcloud
-  - archive
+# index_widgets:
+#   - category
+#   - tagcloud
+#   - archive
 
 personal:
   avatar: /images/upload/avatar.png
