@@ -3,10 +3,10 @@
 
 name: serverless CI
 
-on:
-  repository_dispatch:
-    types: [start, opened, deleted]
-  workflow_dispatch
+on: [repository_dispatch, workflow_dispatch]
+  # repository_dispatch:
+  #   types: [start, opened, deleted]
+  # workflow_dispatch
 
 jobs:
   build:
