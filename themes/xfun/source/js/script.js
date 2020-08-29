@@ -273,7 +273,7 @@
           scrollTop: top,
           screenLeft: top,
         },
-        300
+        400
       );
     };
   }
