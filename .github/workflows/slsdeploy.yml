@@ -6,6 +6,7 @@ name: serverless CI
 on:
   repository_dispatch:
     types: [start, opened, deleted]
+  workflow_dispatch
 
 jobs:
   build:
@@ -37,3 +38,13 @@ jobs:
           TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
           TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
         run: npm run deploy:sls
+      - name: Commit
+        run: |
+          git config --global user.email jj.xie@outlook.com
+          git config --global user.name JJXIE
+          git add .
+          git commit -m "update" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
