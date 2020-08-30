@@ -13,7 +13,7 @@ disable_comment: true
 # 关于博客
 
 我就是想随便写点东西，不在乎有没有人看，也不在乎写的好不好，喜欢随性 😁。
-本博客是用 Hexo 生成静态 HTML 并写了个主题[XFun](https://github.com/jianjunx/hexo-theme-xfun)，在语雀上写作，使用[quexo](https://github.com/jianjunx/quexo)同步语雀的文章到 hexo，使用 GitHub Actions 持续构建，使用 Serverless 部署在腾讯云的对象存储上，感谢它们让我这个免费党白嫖资源 😆。
+本博客是用 Hexo 生成静态 HTML 并写了个主题[XFun](https://github.com/jianjunx/hexo-theme-xfun)，在语雀上写作，使用[quexo](https://github.com/jianjunx/quexo)同步语雀的文章到 hexo，使用 GitHub Actions 持续构建，使用 Serverless 部署在腾讯云的对象存储上，感谢它们让我这个一毛不拔党白嫖资源 😆。
 
 ### 其他
 

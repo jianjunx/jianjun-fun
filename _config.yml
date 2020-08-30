@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
+title: 谢建军的博客(jianjun.fun)
+subtitle: 谢建军(jianjun.fun)的个人空间，技术博客
+description: 技术博客,分享编程经验，包括js、html、css、nodejs，前端开发知识，后端开发和小程序开发等
+keywords: jianjun,xiejianjun,谢建军,前端开发,nodejs,开发经验
 author: JJ Xie
 language: zh-cn
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://jianjun.fun
 root: /
 permalink: p/:urlname.html
 permalink_defaults:
