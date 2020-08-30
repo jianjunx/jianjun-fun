@@ -288,4 +288,4 @@ src
 xpack.config.js
 package.json
 
-随便写一些测试代码，然后执行 xpack 指令打包，不出意外就能正常打包了。
+随便写一些测试代码，然后执行 xpack 指令打包，不出意外就能正常打包了，完整的代码在[jianjunx/my-pack](https://github.com/jianjunx/my-pack)。
