@@ -210,3 +210,4 @@ $ shanx init demo
 
 ![截屏2020-08-30 下午3.46.36.png](/images/post/1598773613685-2508e7d4-a315-4e2b-93e8-1cb731117c99.png)
 正确输出了信息，本地也多出了 demo 的目录和文件，到这里我们的第二个目标也完成了，CLI 是不是也没想象中的那么高端。
+完整代码在[jianjunx/my-cli](https://github.com/jianjunx/my-cli)这里。
