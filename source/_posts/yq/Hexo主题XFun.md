@@ -8,6 +8,7 @@ categories: [其他]
 
 ![xfun-hexo-theme.png](/images/post/1598666814364-c2cb3a1b-c0b9-4cc7-94a0-d570c310d818.png)
 花了根据几天时间在官方 landscape 主题上修改并借鉴了 next 一些的风格，命名为 XFun，虽说有些简陋，但是符合我喜欢的风格。
+_<!-- more -->_
 
 ## Installation
 
