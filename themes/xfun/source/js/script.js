@@ -297,7 +297,8 @@
   (function () {
     const WINDOW = $(window);
     document.addEventListener("scroll", function (e) {
-      scrollDeps.forEach((fn) => fn(WINDOW.scrollTop(), e));
+      const wtop = WINDOW.scrollTop();
+      scrollDeps.forEach((fn) => fn(wtop, e));
     });
   })();
   // 处理toc
