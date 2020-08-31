@@ -31,14 +31,17 @@
     <div class="article-entry" itemprop="articleBody">
       <% if (index){ %>
       <p class="index-excerpt">
-        <%- post.excerpt ? post.excerpt : strip_html(post.content).slice(0, 300)
-        + '...' %>
+        <%- post.excerpt ? post.excerpt : (function(content){
+          const end = content.indexOf(':::')
+          if(end == -1) return strip_html(content).slice(0, 300) + '...'
+          return content.slice(0, end)
+        })(post.content) %>
       </p>
       <% if (theme.excerpt_link){ %>
       <p class="article-more-link">
         <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
       </p>
-      <% } %> <% } else { %> <%- post.content %> <% } %>
+      <% } %> <% } else { %> <%- post.content.replace(':::', '') %> <% } %>
     </div>
     <% if (!index){ %>
     <div class="entry">
