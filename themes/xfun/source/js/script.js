@@ -293,13 +293,19 @@
     }
     return eles;
   }
+  const scrollDeps = [];
+  (function () {
+    const WINDOW = $(window);
+    document.addEventListener("scroll", function (e) {
+      scrollDeps.forEach((fn) => fn(WINDOW.scrollTop(), e));
+    });
+  })();
   // 处理toc
   (function () {
     const TOC_SRC = document.querySelector("#toc-src");
     if (!TOC_SRC) return;
     const TOC = $("#toc");
     const TO_TOP = $(".to-top");
-    const WINDOW = $(window);
     const setTopHandler = setTop();
     TOC.append(TOC_SRC);
     TOC.show();
@@ -313,29 +319,24 @@
       return false;
     });
 
-    let timer = null;
     const top = TOC.offset().top;
     const titles = getTitles();
-    document.addEventListener("scroll", function (e) {
-      clearTimeout(timer);
-      setTimeout(() => {
-        const wtop = WINDOW.scrollTop();
-        const tocTop = top - wtop;
-        setTocActive(titles, wtop);
+    scrollDeps.push((wtop) => {
+      const tocTop = top - wtop;
+      setTocActive(titles, wtop);
 
-        if (wtop > 200) {
-          TO_TOP.show();
-        } else {
-          TO_TOP.hide();
-        }
-        if (tocTop < 75) {
-          if (TOC.hasClass("toc-fixed")) return;
-          TOC.addClass("toc-fixed");
-        } else {
-          if (!TOC.hasClass("toc-fixed")) return;
-          TOC.removeClass("toc-fixed");
-        }
-      }, 100);
+      if (wtop > 200) {
+        TO_TOP.show();
+      } else {
+        TO_TOP.hide();
+      }
+      if (tocTop < 75) {
+        if (TOC.hasClass("toc-fixed")) return;
+        TOC.addClass("toc-fixed");
+      } else {
+        if (!TOC.hasClass("toc-fixed")) return;
+        TOC.removeClass("toc-fixed");
+      }
     });
   })();
   function setTocActive(list, top) {
@@ -346,5 +347,36 @@
         $(`a[href="#${encodeURI(id)}"]`).removeClass("toc-active");
       }
     }
+  }
+  // header隐藏逻辑
+  (function () {
+    const getDirection = scrollDirection();
+    const header = $("#header");
+    const toc = document.querySelector("#toc");
+    let flag = false;
+    scrollDeps.push((wtop, e) => {
+      const d = getDirection(wtop);
+      if (d === "top" && !flag) {
+        flag = true;
+        header.animate({ top: "10px" }, 300);
+        if (toc) toc.style.top = "70px";
+        setTimeout(() => (flag = false), 300);
+      }
+      if (d === "down" && !flag) {
+        flag = true;
+        header.animate({ top: "-80px" }, 300);
+        if (toc) toc.style.top = "0";
+        setTimeout(() => (flag = false), 300);
+      }
+    });
+  })();
+  function scrollDirection() {
+    let old = 0;
+    return function (wtop) {
+      if (wtop === old) return;
+      const direction = wtop < old ? "top" : "down";
+      old = wtop;
+      return direction;
+    };
   }
 })(jQuery);
