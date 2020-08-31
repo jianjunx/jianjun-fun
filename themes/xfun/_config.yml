@@ -42,7 +42,7 @@ lines:
     link: /tags
   分类:
     icon: icon-category
-    link: /categorys
+    link: /categories
   XFun:
     icon: icon-github
     link: https://github.com/jianjunx/hexo-theme-xfun
@@ -62,11 +62,11 @@ icons:
     link: /
 
 valine:
-  appId: 'pzmKEXwktJcbFThJyEK0HiUt-9Nh9j0Va'
-  appKey: 'hBrXSEpHp0MSCNHQNpcFfi7J'
+  appId: "pzmKEXwktJcbFThJyEK0HiUt-9Nh9j0Va"
+  appKey: "hBrXSEpHp0MSCNHQNpcFfi7J"
 
 # widget behavior
-archive_type: 'monthly'
+archive_type: "monthly"
 show_count: true
 ribbon_flow: true
 # Miscellaneous
