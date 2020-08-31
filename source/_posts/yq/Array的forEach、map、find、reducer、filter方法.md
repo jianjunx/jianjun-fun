@@ -6,7 +6,9 @@ tags: [js]
 categories: [JavaScript]
 ---
 
+![](/images/post/1598004565773-757d16e0-5e58-4893-be22-f85506043dec.png)
 JavaScript 数组 Array.prototype 提供了几个非常方便的迭代方法，这里用图解的方式来理解这些方法。
+_<!-- more -->_
 
 ## Array.forEach
 
