@@ -57,12 +57,19 @@ git pull
 # Header
 menu:
   首页:
-    icon: icon-home # 字体图标类名，见下方说明
+    icon: icon-home # 字体图标类名，FontAwesome图标，在css/_partial/icons.styl定义
     link: / # 链接地址
-rss: /atom.xml # 配合hexo-generator-feed插件
-logo: # logo地址
+
+# 配合hexo-generator-feed插件
+rss: /atom.xml
+
+# logo地址
+logo:
+
 # Content
 excerpt_link: 阅读全文>>
+
+# 图片预览
 fancybox: true
 
 # Sidebar
@@ -75,8 +82,9 @@ widgets:
   # - archive
   # - recent_posts
 
-personal: #个人信息栏设置
-  avatar: /images/upload/avatar.png #头像地址
+#个人信息栏设置
+personal:
+  avatar: #头像地址
   name: JJ Xie # 作者名
   description: XFun. #描述
 
@@ -105,16 +113,20 @@ icons: #个人信息栏下方的图标按钮
     icon: icon-juejin
     link: /
 
-valine: # 参考下面的valine配置
+valine:
   appId: #valine leanClode appId
   appKey: #valine leanClode appKey
 
 # widget behavior
 archive_type: "monthly"
 show_count: true
-ribbon_flow: true
-# Miscellaneous
-favicon: #favicon.ico地址
+ribbon_flow: true #背景彩带
+
+#favicon.ico地址
+favicon:
+
+# 右上角GitHub
+github:
 ```
 
 ### 配置中的 icon
@@ -166,6 +178,10 @@ favicon: #favicon.ico地址
 ### 文章版权信息
 
 主题默认会为每个文章底部添加版权声明信息，如果某篇文章需要关闭该信息，请在文章顶部配置信息添加 copyright: false 配置即可。
+
+### GitHub
+
+在右上角添加 Github 图标 github: <you github url>
 
 ### ribbon_flow 背景彩带
 
