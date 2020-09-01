@@ -61,6 +61,7 @@ icons:
     icon: icon-juejin
     link: /
 
+# 评论
 valine:
   appId: "pzmKEXwktJcbFThJyEK0HiUt-9Nh9j0Va"
   appKey: "hBrXSEpHp0MSCNHQNpcFfi7J"
@@ -69,5 +70,9 @@ valine:
 archive_type: "monthly"
 show_count: true
 ribbon_flow: true
-# Miscellaneous
+
+# favicon.ico
 favicon: /images/upload/favicon.png
+
+# 右上角GitHub
+github: https://github.com/jianjunx/jianjun-fun
