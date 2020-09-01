@@ -3,7 +3,7 @@ title: 关于我
 urlname: about
 date: 2020-08-01 16:06:23 +0800
 categories: [其他]
-disable_comment: true
+comment: false
 ---
 
 # Hello.

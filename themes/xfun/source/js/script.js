@@ -265,18 +265,7 @@
       v.ele.css("opacity", v.size / maxSize);
     });
   })();
-  function setTop() {
-    const body = $("html,body");
-    return function (top) {
-      body.animate(
-        {
-          scrollTop: top,
-          screenLeft: top,
-        },
-        400
-      );
-    };
-  }
+
   function getTitles() {
     const titles = $(
       ".article-entry h1,.article-entry h2,.article-entry h3,.article-entry h4,.article-entry h5,.article-entry h6"
@@ -294,26 +283,53 @@
     return eles;
   }
   const scrollDeps = [];
+  // 统一绑定scroll
   (function () {
     const WINDOW = $(window);
     document.addEventListener("scroll", function (e) {
       const wtop = WINDOW.scrollTop();
+      // 通知订阅
       scrollDeps.forEach((fn) => fn(wtop, e));
     });
   })();
+  function setTop() {
+    const body = $("html,body");
+    return function (top) {
+      body.animate(
+        {
+          scrollTop: top,
+          screenLeft: top,
+        },
+        400
+      );
+    };
+  }
+  const setTopHandler = setTop();
+
+  // 处理回到顶部
+  (function () {
+    const TO_TOP = $(".to-top");
+    TO_TOP.on("click", function () {
+      setTopHandler(0);
+    });
+    scrollDeps.push((wtop) => {
+      if (wtop > 200) {
+        TO_TOP.show();
+      } else {
+        TO_TOP.hide();
+      }
+    });
+  })();
+
   // 处理toc
   (function () {
     const TOC_SRC = document.querySelector("#toc-src");
     if (!TOC_SRC) return;
     const TOC = $("#toc");
-    const TO_TOP = $(".to-top");
-    const setTopHandler = setTop();
     TOC.append(TOC_SRC);
     TOC.show();
     TOC.css("width", $("#sidebar").width() + "px");
-    TO_TOP.on("click", function () {
-      setTopHandler(0);
-    });
+
     $("#toc-src").on("click", "a", function (e) {
       const href = $(e.target).parent().attr("href");
       setTopHandler($(decodeURI(href)).offset().top - 70);
@@ -326,11 +342,6 @@
       const tocTop = top - wtop;
       setTocActive(titles, wtop);
 
-      if (wtop > 200) {
-        TO_TOP.show();
-      } else {
-        TO_TOP.hide();
-      }
       if (tocTop < 75) {
         if (TOC.hasClass("toc-fixed")) return;
         TOC.addClass("toc-fixed");
