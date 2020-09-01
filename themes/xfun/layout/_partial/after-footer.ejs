@@ -15,27 +15,39 @@
 <% } %>
 
 <script src="//cdn.bootcdn.net/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<!-- 评论 -->
 <% if (theme.valine){ %>
 <script type="text/javascript" src="/js/valine.min.js"></script>
 <script>
   (function (pathname, appId, appKey) {
     new Valine({
-      el: '#vcomments',
+      el: "#vcomments",
       appId: appId,
       appKey: appKey,
-      avatar: 'robohash',
+      avatar: "robohash",
       recordIP: true,
       visitor: true,
       path: pathname,
     });
   })(
     location.pathname,
-    '<%= theme.valine.appId %>',
-    '<%= theme.valine.appKey %>',
+    "<%= theme.valine.appId %>",
+    "<%= theme.valine.appKey %>"
   );
 </script>
-<% } %> <% if (theme.ribbon_flow){ %>
+<% } %>
+<!-- 背景彩条 -->
+<% if (theme.ribbon_flow){ %>
 <script type="text/javascript" src="/js/ribbons.js"></script>
-<% } %> <% if (theme.fancybox){ %> <%- css('fancybox/jquery.fancybox') %> <%-
+<% } %>
+<!-- 访问量统计 -->
+<% if (theme.site_pv){ %>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<% } %>
+<!-- 图片预览 -->
+<% if (theme.fancybox){ %> <%- css('fancybox/jquery.fancybox') %> <%-
 js('fancybox/jquery.fancybox.pack') %> <% } %> <%- js('js/script') %> <%-
 partial('gauges-analytics') %>

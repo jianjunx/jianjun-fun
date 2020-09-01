@@ -76,3 +76,6 @@ favicon: /images/upload/favicon.png
 
 # 右上角GitHub
 github: https://github.com/jianjunx/jianjun-fun
+
+# 访问量统计
+site_pv: true

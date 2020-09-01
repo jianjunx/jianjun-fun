@@ -5,6 +5,14 @@
       &copy; <%= date(new Date(), 'YYYY') %>
       <i class="icon-love footer-love"></i>
       <%= config.author || config.title %>
+      <!-- 访问量 -->
+      <% if (theme.site_pv){ %>
+      <span class="gap">|</span>
+      <span id="busuanzi_container_site_pv">
+        <i class="icon-pv"> </i>
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+      <% } %>
     </div>
     <div>
       <!-- <a href="http://beian.miit.gov.cn" target="_blank">粤ICP备19142024号</a> -->
