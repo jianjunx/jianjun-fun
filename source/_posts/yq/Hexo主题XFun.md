@@ -158,6 +158,15 @@ favicon: #favicon.ico地址
 
 更多配置请参考[valine](https://valine.js.org/quickstart.html)
 
+#### 关闭评论
+
+1. 全局关闭：在主题配置文件中删除 valine 配置项
+1. 单个文章关闭：请在文章顶部(---内)添加 comment: false 配置
+
+### 文章版权信息
+
+主题默认会为每个文章底部添加版权声明信息，如果某篇文章需要关闭该信息，请在文章顶部配置信息添加 copyright: false 配置即可。
+
 ### ribbon_flow 背景彩带
 
 这里是在网上找的一段代码，可以在\_config.yml 中选择开启或关闭。
