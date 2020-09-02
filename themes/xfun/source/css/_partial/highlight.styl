@@ -1,28 +1,31 @@
 // https://github.com/chriskempson/tomorrow-theme
-// highlight-background = #2d2d2d
-// highlight-current-line = #393939
-// highlight-selection = #515151
-// highlight-foreground = #cccccc
-// highlight-comment = #999999
-// highlight-red = #f2777a
-// highlight-orange = #f99157
-// highlight-yellow = #ffcc66
-// highlight-green = #99cc99
-// highlight-aqua = #66cccc
-// highlight-blue = #6699cc
-// highlight-purple = #cc99cc
-highlight-background = #fafafa
-highlight-current-line = #efefef
-highlight-selection = #d6d6d6
-highlight-foreground = #4d4d4c
-highlight-comment = #8e908c
-highlight-red = #c82829
-highlight-orange = #f5871f
-highlight-yellow = #eab700
-highlight-green = #718c00
-highlight-aqua = #3e999f
-highlight-blue = #4271ae
-highlight-purple = #8959a8
+// 暗色样式
+highlight-background = #2d2d2d
+highlight-current-line = #393939
+highlight-selection = #515151
+highlight-foreground = #cccccc
+highlight-comment = #999999
+highlight-red = #f2777a
+highlight-orange = #f99157
+highlight-yellow = #ffcc66
+highlight-green = #99cc99
+highlight-aqua = #66cccc
+highlight-blue = #6699cc
+highlight-purple = #cc99cc
+
+// 白色样式
+// highlight-background = #fff
+// highlight-current-line = #efefef
+// highlight-selection = #d6d6d6
+// highlight-foreground = #4d4d4c
+// highlight-comment = #8e908c
+// highlight-red = #c82829
+// highlight-orange = #f5871f
+// highlight-yellow = #eab700
+// highlight-green = #718c00
+// highlight-aqua = #3e999f
+// highlight-blue = #4271ae
+// highlight-purple = #8959a8
 
 $code-block
   background: highlight-background
@@ -55,6 +58,22 @@ $line-numbers
       padding: 0
   .highlight
     @extend $code-block
+    &::-webkit-scrollbar
+      width: 7px;
+      height: 7px;
+      background-color: #F5F5F5;
+    &::-webkit-scrollbar-thumb
+      border-radius: 10px;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, .1);
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .1);
+      background-color: #c8c8c8;
+    /*定义滚动条轨道 内阴影+圆角*/
+    // &::-webkit-scrollbar-track 
+    //   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    //   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    //   border-radius: 10px;
+    //   background-color: #F5F5F5;
+  
     pre
       border: none
       margin: 0
