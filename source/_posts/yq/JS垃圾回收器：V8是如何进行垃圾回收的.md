@@ -2,8 +2,8 @@
 title: JS垃圾回收器：V8是如何进行垃圾回收的
 urlname: xm6mnt
 date: 2020-09-03 09:26:03 +0000
-tags: []
-categories: []
+tags: [V8,内存]
+categories: [JavaScript]
 ---
 
 ![72150-b519a222c65a39a5.webp](/images/post/1599128080850-46b8cf11-50c5-4416-a179-3d7dc807b673.webp)
