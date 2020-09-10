@@ -3,7 +3,8 @@
 
 name: serverless CI
 
-on: [repository_dispatch, workflow_dispatch]
+on:
+  [repository_dispatch, workflow_dispatch]
   # repository_dispatch:
   #   types: [start, opened, deleted]
   # workflow_dispatch
@@ -47,6 +48,7 @@ jobs:
           ftp-username: ${{secrets.FTP_USER}}
           ftp-password: ${{ secrets.FTP_PWD }}
           local-dir: ./public
+          git-ftp-args: --all
       - name: Commit
         run: |
           git config --global user.email jj.xie@outlook.com
