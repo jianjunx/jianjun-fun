@@ -7,7 +7,7 @@
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "dev": "hexo server",
-    "sync": "YUQUE_TOKEN=IymPcIY0RSUjBbBpAnG29I4ZY1eQMTDWFgH2bLY6  quexo sync",
+    "sync": "quexo sync",
     "deploy:sls": "sls deploy --debug"
   },
   "hexo": {
