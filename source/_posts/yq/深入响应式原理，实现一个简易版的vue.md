@@ -1,12 +1,12 @@
 ---
 title: 深入响应式原理，实现一个简易版的vue
 urlname: gpve1b
-date: 2020-08-27 08:00:06 +0000
+date: 2020-08-27 16:00:06 +0800
 tags: [源码,vue]
 categories: [前端,VUE]
 ---
 
-![data.png](/images/post/1598578798979-f2509ca1-b07d-4f65-88f2-bce50ecda8c9.png)
+![data.png](https:/jianjun-1251280787.file.myqcloud.com/post/1598578798979-f2509ca1-b07d-4f65-88f2-bce50ecda8c9.png)
 最近研究了一下 Vue 的响应式原理，如上图，在初始化 Vue 对象时会对 data 对象做循环遍历，用 ES6 中的  [`Object.defineProperty`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty) 为每个属性添加 getter/seeter，在模板使用某属性时就会触发 getter，在为 data 中属性赋值时会触发 setter 从而达到数据劫持的效果。:::
 光有有数据劫持还不行，还需要一个 Watcher 进行依赖收集，通过 Dep 实现发布订阅(发布订阅者设计模式)，当触发 setter 时会去通知 Watcher 进行更新。\_
 

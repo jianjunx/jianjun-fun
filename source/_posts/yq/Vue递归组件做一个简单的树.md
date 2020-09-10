@@ -1,7 +1,7 @@
 ---
 title: Vue递归组件做一个简单的树
 urlname: hh4yw4
-date: 2020-08-21 02:47:28 +0000
+date: 2020-08-21 10:47:28 +0800
 tags: [vue,组件,递归]
 categories: [前端]
 ---
@@ -123,4 +123,4 @@ template: '<div><stack-overflow></stack-overflow></div>'
 ```
 
 效果图：
-![1578201090.png](/images/post/1597978182108-ebf60c9d-07e4-4e37-804c-c1d8b05e7c46.png)
+![1578201090.png](https:/jianjun-1251280787.file.myqcloud.com/post/1597978182108-ebf60c9d-07e4-4e37-804c-c1d8b05e7c46.png)

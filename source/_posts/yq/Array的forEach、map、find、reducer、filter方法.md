@@ -1,12 +1,12 @@
 ---
 title: Array的forEach、map、find、reducer、filter方法
 urlname: vr6tod
-date: 2020-08-21 10:09:15 +0000
+date: 2020-08-21 18:09:15 +0800
 tags: [js]
 categories: [JavaScript]
 ---
 
-![](/images/post/1598004565773-757d16e0-5e58-4893-be22-f85506043dec.png)
+![](https:/jianjun-1251280787.file.myqcloud.com/post/1598004565773-757d16e0-5e58-4893-be22-f85506043dec.png)
 JavaScript 数组 Array.prototype 提供了几个非常方便的迭代方法，这里用图解的方式来理解这些方法。:::\_
 
 ## Array.forEach
@@ -25,7 +25,7 @@ array1.forEach(function (element) {
 // expected output: "c"
 ```
 
-![](/images/post/1598004565779-1e6d1668-7acd-4f97-a660-459176fd18f3.png)
+![](https:/jianjun-1251280787.file.myqcloud.com/post/1598004565779-1e6d1668-7acd-4f97-a660-459176fd18f3.png)
 
 ## Array.map
 
@@ -41,7 +41,7 @@ console.log(map1);
 // expected output: Array [2, 8, 18, 32]
 ```
 
-![](/images/post/1598004565796-a6c1ebc9-8edb-4e55-83a5-65225318780a.png)
+![](https:/jianjun-1251280787.file.myqcloud.com/post/1598004565796-a6c1ebc9-8edb-4e55-83a5-65225318780a.png)
 
 ## Array.filter
 
@@ -56,7 +56,7 @@ console.log(result);
 // expected output: Array ["exuberant", "destruction", "present"]
 ```
 
-![](/images/post/1598004565773-757d16e0-5e58-4893-be22-f85506043dec.png)
+![](https:/jianjun-1251280787.file.myqcloud.com/post/1598004565773-757d16e0-5e58-4893-be22-f85506043dec.png)
 
 ## Array.find
 
@@ -73,7 +73,7 @@ console.log(found);
 // expected output: 130
 ```
 
-![](/images/post/1598004565795-35a85862-b97e-4e05-82a8-a432c731c505.png)
+![](https:/jianjun-1251280787.file.myqcloud.com/post/1598004565795-35a85862-b97e-4e05-82a8-a432c731c505.png)
 
 ## Array.reduce
 
@@ -92,4 +92,4 @@ console.log(array1.reduce(reducer, 5));
 // expected output: 15
 ```
 
-![](/images/post/1598004565793-a1fb018e-4e35-4f93-8d11-152032895e3c.png)
+![](https:/jianjun-1251280787.file.myqcloud.com/post/1598004565793-a1fb018e-4e35-4f93-8d11-152032895e3c.png)

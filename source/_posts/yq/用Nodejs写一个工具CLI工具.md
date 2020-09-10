@@ -1,12 +1,12 @@
 ---
 title: 用Nodejs写一个工具CLI工具
 urlname: plfuhf
-date: 2020-08-30 03:11:23 +0000
+date: 2020-08-30 11:11:23 +0800
 tags: [cli,Nodejs]
 categories: [前端,工具]
 ---
 
-![截屏2020-08-30 上午11.16.21.png](/images/post/1598757500590-56b8396d-9b16-4406-84bf-0eb865b81612.png)
+![截屏2020-08-30 上午11.16.21.png](https:/jianjun-1251280787.file.myqcloud.com/post/1598757500590-56b8396d-9b16-4406-84bf-0eb865b81612.png)
 在前端开发中，或多或少都会接触各种 CLI 工具，比如 vue-cli、react-create-app、angular-cli 等，在开发阶段帮助我们初始化项目、初始化配置、创建文件等，是不是感觉很高端、很强大？不要羡慕，我们自己也能写一个。:::
 \_
 
@@ -209,6 +209,6 @@ program.parse(process.argv); // 通过program.parse(arguments)方法处理参数
 $ shanx init demo
 ```
 
-![截屏2020-08-30 下午3.46.36.png](/images/post/1598773613685-2508e7d4-a315-4e2b-93e8-1cb731117c99.png)
+![截屏2020-08-30 下午3.46.36.png](https:/jianjun-1251280787.file.myqcloud.com/post/1598773613685-2508e7d4-a315-4e2b-93e8-1cb731117c99.png)
 正确输出了信息，本地也多出了 demo 的目录和文件，到这里我们的第二个目标也完成了，CLI 是不是也没想象中的那么高端。
 完整代码在[jianjunx/my-cli](https://github.com/jianjunx/my-cli)这里。

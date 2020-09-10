@@ -1,12 +1,12 @@
 ---
 title: 学习webpack 写一个js代码打包工具
 urlname: ing0x6
-date: 2020-08-29 09:32:53 +0000
+date: 2020-08-29 17:32:53 +0800
 tags: [webpack,Nodejs]
 categories: [前端,工具]
 ---
 
-![截屏2020-08-29 下午9.40.11.png](/images/post/1598709499271-e0ec778d-1fe5-4987-819f-706e603283f8.png)
+![截屏2020-08-29 下午9.40.11.png](https:/jianjun-1251280787.file.myqcloud.com/post/1598709499271-e0ec778d-1fe5-4987-819f-706e603283f8.png)
 
 webpack 是一个用 nodejs 写的前端打包工具，从官网上的图片可以看出，可以将不同类型和总错复杂的依赖关系的文件打包成简单的浏览器可以认识的文件。:::\_
 

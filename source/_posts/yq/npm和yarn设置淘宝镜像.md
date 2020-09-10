@@ -1,7 +1,7 @@
 ---
 title: npm和yarn设置淘宝镜像
 urlname: okxy9e
-date: 2020-08-23 05:45:28 +0000
+date: 2020-08-23 13:45:28 +0800
 tags: [前端,NPM,Nodejs]
 categories: [技巧]
 ---

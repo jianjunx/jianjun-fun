@@ -7,19 +7,11 @@
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "dev": "hexo server",
-    "sync": "quexo sync",
+    "sync": "YUQUE_TOKEN=IymPcIY0RSUjBbBpAnG29I4ZY1eQMTDWFgH2bLY6  quexo sync",
     "deploy:sls": "sls deploy --debug"
   },
   "hexo": {
     "version": "5.0.2"
-  },
-  "yuqueConfig": {
-    "login": "jianjunxie",
-    "repo": "kb",
-    "mdNameFormat": "title",
-    "postPath": "source/_posts/yq",
-    "imagePath": "source/images/post",
-    "saveImage": true
   },
   "dependencies": {
     "hexo": "^5.0.0",
@@ -40,7 +32,7 @@
     "install": "^0.13.0"
   },
   "devDependencies": {
-    "quexo": "^1.6.8",
+    "quexo": "^1.6.9",
     "serverless": "^1.79.0"
   }
 }

@@ -1,7 +1,7 @@
 ---
 title: js中new 做了哪些事情?
 urlname: wakxqm
-date: 2020-08-21 10:07:06 +0000
+date: 2020-08-21 18:07:06 +0800
 tags: [js]
 categories: [JavaScript]
 ---

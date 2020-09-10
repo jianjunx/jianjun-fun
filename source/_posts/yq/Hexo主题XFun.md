@@ -1,12 +1,12 @@
 ---
 title: Hexo主题XFun
 urlname: if3wr3
-date: 2020-08-29 02:05:15 +0000
+date: 2020-08-29 10:05:15 +0800
 tags: [Hexo,主题]
 categories: [其他]
 ---
 
-![xfun-hexo-theme.png](/images/post/1598666814364-c2cb3a1b-c0b9-4cc7-94a0-d570c310d818.png)
+![xfun-hexo-theme.png](https:/jianjun-1251280787.file.myqcloud.com/post/1598666814364-c2cb3a1b-c0b9-4cc7-94a0-d570c310d818.png)
 花了根据几天时间在官方 landscape 主题上修改并借鉴了 next 一些的风格，命名为 XFun，虽说有些简陋，但是符合我喜欢的风格。:::
 
 ## Installation
@@ -136,7 +136,7 @@ github:
 1. 去[FontAwesome](https://fontawesome.dashgame.com/)找到心仪的图标,选中按 F12 打开控制台。
 1. 在 Element(元素)那里找到对应图标的 i 标签，如下：
 
-![get-icon.png](/images/post/1598668538741-74816168-2800-469f-806a-a3f175577342.png)
+![get-icon.png](https:/jianjun-1251280787.file.myqcloud.com/post/1598668538741-74816168-2800-469f-806a-a3f175577342.png)
 
 3. 在 css/\_partial/icons.styl 中新增类名
 
@@ -164,9 +164,9 @@ github:
 #### 获取 APPID 和 APPKEY
 
 请先[登录](https://leancloud.cn/dashboard/login.html#/signin)或[注册](https://leancloud.cn/dashboard/login.html#/signup) `LeanCloud`, 进入[控制台](https://leancloud.cn/dashboard/applist.html#/apps)后点击左下角[创建应用](https://leancloud.cn/dashboard/applist.html#/newapp)：
-![](/images/post/1598669037918-9cecd486-2b10-4c8a-a714-02550121ea7d.jpeg)
+![](https:/jianjun-1251280787.file.myqcloud.com/post/1598669037918-9cecd486-2b10-4c8a-a714-02550121ea7d.jpeg)
 应用创建好以后，进入刚刚创建的应用，选择左下角的设置>应用 Key，然后就能看到你的 APP ID 和 APP Key 了：
-![](/images/post/1598669070281-1098abe2-decc-4db0-b0cf-9f1e5988e534.jpeg)
+![](https:/jianjun-1251280787.file.myqcloud.com/post/1598669070281-1098abe2-decc-4db0-b0cf-9f1e5988e534.jpeg)
 
 更多配置请参考[valine](https://valine.js.org/quickstart.html)
 
