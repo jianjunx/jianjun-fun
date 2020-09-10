@@ -28,6 +28,8 @@ jobs:
       - name: Sync yuque
         env:
           YUQUE_TOKEN: ${{secrets.YUQUE_TOKEN}}
+          COS_SECRETID: ${{ secrets.TENCENT_SECRET_ID }}
+          COS_SECRETKEY: ${{ secrets.TENCENT_SECRET_KEY }}
         run: npm run sync
       - name: Build hexo
         run: npm run build
