@@ -44,7 +44,7 @@ jobs:
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
-          ftp-server: ftp://${{secrets.FTP_URL}}/WEB
+          ftp-server: ftp://vhost140.cloudvhost.top/WEB
           ftp-username: ${{secrets.FTP_USER}}
           ftp-password: ${{ secrets.FTP_PWD }}
           local-dir: ./public
