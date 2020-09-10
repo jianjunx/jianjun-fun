@@ -33,13 +33,20 @@ jobs:
         run: npm run sync
       - name: Build hexo
         run: npm run build
-      - name: Serverless deploy
-        env: # Or as an environment variable
-          STAGE: prod
-          SERVERLESS_PLATFORM_VENDOR: tencent
-          TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
-          TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
-        run: npm run deploy:sls
+      # - name: Serverless deploy
+      #   env: # Or as an environment variable
+      #     STAGE: prod
+      #     SERVERLESS_PLATFORM_VENDOR: tencent
+      #     TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
+      #     TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
+      #   run: npm run deploy:sls
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          ftp-server: ftp://${{secrets.FTP_URL}}/WEB/
+          ftp-username: ${{secrets.FTP_USER}}
+          ftp-password: ${{ secrets.FTP_PWD }}
+          local-dir: ./public
       - name: Commit
         run: |
           git config --global user.email jj.xie@outlook.com
