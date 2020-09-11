@@ -56,7 +56,7 @@ jobs:
       #   uses: SamKirkland/FTP-Deploy-Action@3.1.1
       #   with:
       #     ftp-server: ftp://vhost140.cloudvhost.top:21/WEB
-      #     ftp-username: webmaster@HA637612
+      #     ftp-username: ${{ secrets.FTP_USER }}
       #     ftp-password: ${{ secrets.FTP_PWD }}
       #     git-ftp-args: --insecure
       # local-dir: public
