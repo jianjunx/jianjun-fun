@@ -27,7 +27,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install -g hexo-cli
 
       - name: Sync yuque
         env:
@@ -39,11 +41,8 @@ jobs:
       - name: Build hexo
         run: npm run build
 
-      # - name: Deploy hexo
-      #   env: # Or as an environment variable
-      #     FTP_USER: ${{ secrets.FTP_USER }}
-      #     FTP_PASS: ${{ secrets.FTP_PWD }}
-      #   run: npm run deploy
+      - name: Deploy hexo
+        run: hexo deploy user=${{ secrets.FTP_USER }} password=${{secrets.FTP_PWD}}
 
       # - name: Serverless deploy
       #   env: # Or as an environment variable
@@ -53,15 +52,14 @@ jobs:
       #     TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
       #   run: npm run deploy:sls
 
-          
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
-        with:
-          ftp-server: ftp://vhost140.cloudvhost.top:21/WEB
-          ftp-username: webmaster@HA637612
-          ftp-password: ${{ secrets.FTP_PWD }}
-          git-ftp-args: --insecure
-          # local-dir: public
+      # - name: FTP-Deploy-Action
+      #   uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      #   with:
+      #     ftp-server: ftp://vhost140.cloudvhost.top:21/WEB
+      #     ftp-username: webmaster@HA637612
+      #     ftp-password: ${{ secrets.FTP_PWD }}
+      #     git-ftp-args: --insecure
+      # local-dir: public
 
       - name: Commit
         run: |
