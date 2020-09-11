@@ -40,6 +40,7 @@ jobs:
         run: |
           npm run build
           rm -rf public/.git
+          git init public
 
       # - name: Deploy hexo
       #   env: # Or as an environment variable
