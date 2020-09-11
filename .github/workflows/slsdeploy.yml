@@ -106,7 +106,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
         ftp-server: ftp://vhost140.cloudvhost.top:21/WEB
-        ftp-username: ${{ secrets.FTP_USER }}
+        ftp-username: webmaster@HA637612
         ftp-password: ${{ secrets.FTP_PWD }}
         local-dir: public # This folder is NOT going to upload by default unless you add it to .git-ftp-include
         git-ftp-args: --insecure
