@@ -1,7 +1,7 @@
 ---
 title: Hexo主题XFun
 urlname: if3wr3
-date: 2020-08-29 10:05:15 +0800
+date: 2020-08-29 02:05:15 +0000
 tags: [Hexo,主题]
 categories: [其他]
 ---

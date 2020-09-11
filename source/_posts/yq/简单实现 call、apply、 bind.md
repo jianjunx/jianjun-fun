@@ -1,7 +1,7 @@
 ---
 title: 简单实现 call、apply、 bind
 urlname: zp4qh8
-date: 2020-08-16 16:06:23 +0800
+date: 2020-08-16 08:06:23 +0000
 tags: [js]
 categories: [JavaScript]
 ---

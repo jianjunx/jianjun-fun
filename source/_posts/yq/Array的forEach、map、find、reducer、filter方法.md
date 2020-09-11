@@ -1,7 +1,7 @@
 ---
 title: Array的forEach、map、find、reducer、filter方法
 urlname: vr6tod
-date: 2020-08-21 18:09:15 +0800
+date: 2020-08-21 10:09:15 +0000
 tags: [js]
 categories: [JavaScript]
 ---

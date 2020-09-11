@@ -1,7 +1,7 @@
 ---
 title: JS中a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3 是否为true
 urlname: lrlgxg
-date: 2020-08-23 13:27:26 +0800
+date: 2020-08-23 05:27:26 +0000
 tags: [js]
 categories: [JavaScript]
 ---

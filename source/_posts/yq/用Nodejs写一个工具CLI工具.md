@@ -1,7 +1,7 @@
 ---
 title: 用Nodejs写一个工具CLI工具
 urlname: plfuhf
-date: 2020-08-30 11:11:23 +0800
+date: 2020-08-30 03:11:23 +0000
 tags: [cli,Nodejs]
 categories: [前端,工具]
 ---

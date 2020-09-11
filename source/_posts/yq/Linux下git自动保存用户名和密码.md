@@ -1,7 +1,7 @@
 ---
 title: Linux下git自动保存用户名和密码
 urlname: ya7h3c
-date: 2020-08-17 14:31:45 +0800
+date: 2020-08-17 06:31:45 +0000
 tags: [git]
 categories: [技巧]
 ---
