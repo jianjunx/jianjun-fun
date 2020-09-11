@@ -144,4 +144,11 @@ theme: xfun
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: ftpsync
+  host: vhost140.cloudvhost.top
+  user: ${env:FTP_USER}
+  pass: ${env:FTP_PASS}
+  remote: /WEB
+  port: 21
+  delete: true
+  verbose: true 
