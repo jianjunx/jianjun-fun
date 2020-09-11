@@ -11,10 +11,11 @@
     "deploy:sls": "sls deploy --debug"
   },
   "hexo": {
-    "version": "5.1.1"
+    "version": "5.0.2"
   },
   "dependencies": {
     "hexo": "^5.0.0",
+    "hexo-deployer-ftpsync": "^0.1.1",
     "hexo-filter-nofollow": "^2.0.2",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-baidu-sitemap": "^0.1.9",
@@ -29,7 +30,6 @@
     "hexo-renderer-marked": "^3.0.0",
     "hexo-renderer-stylus": "^2.0.0",
     "hexo-server": "^2.0.0",
-    "hexo-deployer-ftpsync": "^0.1.1",
     "install": "^0.13.0"
   },
   "devDependencies": {
