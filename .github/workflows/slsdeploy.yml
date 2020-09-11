@@ -1,46 +1,43 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-# name: serverless CI
+name: serverless CI
 
-# on:
-#   [repository_dispatch, workflow_dispatch]
-#   # repository_dispatch:
-#   #   types: [start, opened, deleted]
-#   # workflow_dispatch
+on:
+  [repository_dispatch, workflow_dispatch]
+  # repository_dispatch:
+  #   types: [start, opened, deleted]
+  # workflow_dispatch
 
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-#     strategy:
-#       matrix:
-#         node-version: [12.x]
+    strategy:
+      matrix:
+        node-version: [12.x]
 
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v2
-#         with:
-#           fetch-depth: 2
-#       - name: Setup node
-#         uses: actions/setup-node@v1
-#         with:
-#           node-version: ${{ matrix.node-version }}
-#       - name: Install dependencies
-#         run: npm install
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm install
 
-#       - name: Sync yuque
-#         env:
-#           YUQUE_TOKEN: ${{secrets.YUQUE_TOKEN}}
-#           COS_SECRETID: ${{ secrets.TENCENT_SECRET_ID }}
-#           COS_SECRETKEY: ${{ secrets.TENCENT_SECRET_KEY }}
-#         run: npm run sync
+      - name: Sync yuque
+        env:
+          YUQUE_TOKEN: ${{secrets.YUQUE_TOKEN}}
+          COS_SECRETID: ${{ secrets.TENCENT_SECRET_ID }}
+          COS_SECRETKEY: ${{ secrets.TENCENT_SECRET_KEY }}
+        run: npm run sync
 
-#       - name: Build hexo
-#         run: |
-#           npm run build
-#           rm -rf public/.git
-#           git init public
+      - name: Build hexo
+        run: npm run build
 
       # - name: Deploy hexo
       #   env: # Or as an environment variable
@@ -57,56 +54,22 @@
       #   run: npm run deploy:sls
 
           
-      # - name: FTP-Deploy-Action
-      #   uses: SamKirkland/FTP-Deploy-Action@3.1.1
-      #   with:
-      #     ftp-server: ftp://vhost140.cloudvhost.top:21/WEB
-      #     ftp-username: webmaster@HA637612
-      #     ftp-password: ${{ secrets.FTP_PWD }}
-      #     local-dir: public
-      #     git-ftp-args: --insecure
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          ftp-server: ftp://vhost140.cloudvhost.top:21/WEB
+          ftp-username: webmaster@HA637612
+          ftp-password: ${{ secrets.FTP_PWD }}
+          git-ftp-args: --insecure
+          # local-dir: public
 
-      # - name: Commit
-      #   run: |
-      #     git config --global user.email jj.xie@outlook.com
-      #     git config --global user.name JJXIE
-      #     git add .
-      #     git commit -m "update" -a
-      # - name: Push changes
-      #   uses: ad-m/github-push-action@master
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-
-
-on: push
-name: Build and Publish Front End Framework Website
-jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2.1.0
-      with:
-        fetch-depth: 2
-
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
-        
-    - name: Build Project
-      run: |
-        npm install
-        npm run build
-        
-    - name: List output files
-      run: ls
-      
-    - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
-      with:
-        ftp-server: ftp://vhost140.cloudvhost.top:21/WEB
-        ftp-username: webmaster@HA637612
-        ftp-password: ${{ secrets.FTP_PWD }}
-        local-dir: public # This folder is NOT going to upload by default unless you add it to .git-ftp-include
-        git-ftp-args: --insecure
+      - name: Commit
+        run: |
+          git config --global user.email jj.xie@outlook.com
+          git config --global user.name JJXIE
+          git add .
+          git commit -m "update" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
