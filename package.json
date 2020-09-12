@@ -33,7 +33,7 @@
     "install": "^0.13.0"
   },
   "devDependencies": {
-    "quexo": "^1.7.0",
+    "quexo": "^1.7.1",
     "serverless": "^1.79.0"
   }
 }

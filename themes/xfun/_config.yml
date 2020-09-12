@@ -63,8 +63,9 @@ icons:
 
 # 评论
 valine:
-  appId: "pzmKEXwktJcbFThJyEK0HiUt-9Nh9j0Va"
-  appKey: "hBrXSEpHp0MSCNHQNpcFfi7J"
+  appId: pzmKEXwktJcbFThJyEK0HiUt-9Nh9j0Va
+  appKey: hBrXSEpHp0MSCNHQNpcFfi7J
+  serverURLs: https://comment.jianjun.fun
 
 # widget behavior
 archive_type: "monthly"

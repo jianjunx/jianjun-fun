@@ -21,18 +21,19 @@
 <script>
   (function (pathname, appId, appKey) {
     new Valine({
-      el: "#vcomments",
+      el: '#vcomments',
       appId: appId,
       appKey: appKey,
-      avatar: "robohash",
+      avatar: 'robohash',
       recordIP: true,
       visitor: true,
       path: pathname,
+      serverURLs: '<%= theme.valine.serverURLs %>',
     });
   })(
     location.pathname,
-    "<%= theme.valine.appId %>",
-    "<%= theme.valine.appKey %>"
+    '<%= theme.valine.appId %>',
+    '<%= theme.valine.appKey %>',
   );
 </script>
 <% } %>
