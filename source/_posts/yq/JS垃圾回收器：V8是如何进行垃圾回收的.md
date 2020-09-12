@@ -4,11 +4,10 @@ urlname: xm6mnt
 date: 2020-09-03 09:26:03 +0000
 tags: [V8,内存]
 categories: [JavaScript]
-copyright: false
 ---
 
 ![72150-b519a222c65a39a5.webp](https:/jianjun-1251280787.file.myqcloud.com/post/1599128080850-46b8cf11-50c5-4416-a179-3d7dc807b673.webp)
-在 JavaScript 中内存是自动管理的，这也让一些 JavaScript 开发者误以为可以不关心内存管理，这是一个很大的误解。:::
+在 JavaScript 中内存是自动管理的，这也让一些 JavaScript 开发者误以为可以不关心内存管理，这是一个很大的误解，本篇是根据网上资料文章整理如有侵犯请联系删除。:::
 
 在开始之前我们先来理解两个重要的概念：代际假说（The Generational Hypothesis）和 可达性（Reachability）。
 
