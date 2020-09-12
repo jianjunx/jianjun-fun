@@ -66,6 +66,7 @@ valine:
   appId: pzmKEXwktJcbFThJyEK0HiUt-9Nh9j0Va
   appKey: hBrXSEpHp0MSCNHQNpcFfi7J
   serverURLs: https://comment.jianjun.fun
+  visitor: false
 
 # widget behavior
 archive_type: "monthly"
