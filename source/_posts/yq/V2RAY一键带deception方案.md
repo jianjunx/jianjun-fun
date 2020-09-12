@@ -1,12 +1,13 @@
 ---
-title: 用过最稳的V2ray方案
+title: V2RAY一键带deception方案
 urlname: daetgu
 date: 2020-09-12 09:41:53 +0000
 tags: [v2ray]
 categories: [技巧]
 ---
 
-网络上很多 V2ray 教程也有很多都被删了，这里为了防止走丢保留一个备份。
+![image.png](https:/jianjun-1251280787.file.myqcloud.com/post/1599904973131-a16d23f0-29ce-4955-9231-73d384c57b86.png)
+这是一个教你一键安装 V2RAY 的教程，网上有很多类似的教程，这里只是收藏一份，防走丢。:::
 
 ## 使用教程
 
@@ -25,11 +26,25 @@ bash <(curl -sL https://raw.githubusercontent.com/hijkpw/scripts/master/ubuntu_i
 ## 可能出现的问题
 
 1. 多次运行一键脚本，安装过程中会出现如下提示：
-   What would you like to do? - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 1: Keep the existing certificate for now 2: Renew & replace the cert (limit ~5 per 7 days) - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Select the appropriate number [1-2] then [enter] (press 'c' to cancel):
-   **输入 1，回车即可。**
-2. 如果提示证书失败，终端出现如下提示：
-   An unexpected error occurred: There were too many requests of a given type :: Error creating new order :: too many certificates already issued for exact set of domains:test2.hijk.pw: see [https://letsencrypt.org/docs/rate-limits/](https://letsencrypt.org/docs/rate-limits/)
-   说明这个主机名近期申请过太多次免费证书，请换一个主机名尝试，例如 test2.hijk.pw 换成 test3.hijk.pw（需要到 dns 控制台添加解析）。
+
+```bash
+What would you like to do?
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+1: Keep the existing certificate for now
+2: Renew & replace the cert (limit ~5 per 7 days)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Select the appropriate number [1-2] then [enter] (press 'c' to cancel):
+```
+
+**输入 1，回车即可。** 2. 如果提示证书失败，终端出现如下提示：
+
+```bash
+An unexpected error occurred:
+There were too many requests of a given type :: Error creating new order :: too many certificates already issued for exact set of domains:test2.hijk.pw:
+see https://letsencrypt.org/docs/rate-limits/
+```
+
+说明这个主机名近期申请过太多次免费证书，请换一个主机名尝试，例如 test2.hijk.pw 换成 test3.hijk.pw（需要到 dns 控制台添加解析）。
 
 ## 如何判断服务端已经正常运行？
 
@@ -42,17 +57,9 @@ bash <(curl -sL https://raw.githubusercontent.com/hijkpw/scripts/master/ubuntu_i
 
 ## 客户端下载
 
-接下来是**最后一步**：下载客户端，并参考页面中的配置教程进行配置：
-
-### [v2ray windows 客户端下载](https://ssrvps.org/archives/1382)
-
-### [v2ray 安卓客户端下载](https://ssrvps.org/archives/1389)
-
-### [v2ray mac 客户端下载](https://ssrvps.org/archives/1376)
-
-### [v2ray ios 客户端下载](https://ssrvps.org/archives/1394)
-
-下载客户端配置好后，就可以愉快的上外网了！
+接下来是**最后一步**：下载客户端：
+[V2RAY 各版本客户端](https://jianjun.fun/p/hvryle.html)
+下载客户端配置好后，就可以愉快的上网了！
 
 ## 其他
 
@@ -62,8 +69,51 @@ bash <(curl -sL https://raw.githubusercontent.com/hijkpw/scripts/master/ubuntu_i
 bash <(curl -sL https://raw.githubusercontent.com/hijkpw/scripts/master/ubuntu_install_v2ray2.sh) info
 ```
 
-2. v2ray 管理命令：启动：`systemctl start v2ray`，停止：`systemctl stop v2ray`，重启：`systemctl restart v2ray`；
-3. nginx 管理命令：测试配置文件有无错误：`nginx -t`，启动：`systemctl start nginx`，停止：`systemct stop nginx`，重启：`systemctl restart nginx`；
+2. v2ray 管理命令
+   启动：
+
+```bash
+systemctl start v2ray
+```
+
+停止：
+
+```bash
+systemctl stop v2ray
+```
+
+重启：
+
+```bash
+systemctl restart v2ray
+```
+
+3. nginx 管理命令
+
+- 测试配置文件有无错误：
+
+```bash
+nginx -t
+```
+
+- 启动：
+
+```bash
+systemctl start nginx
+```
+
+- 停止：
+
+```bash
+systemct stop nginx
+```
+
+- 重启：
+
+```bash
+systemctl restart nginx
+```
+
 4. 更新 v2ray 到最新版：重新运行一键脚本
 5. 卸载命令：
 
