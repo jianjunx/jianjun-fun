@@ -9,7 +9,7 @@ categories: [技巧]
 ![image.png](https:/jianjun-1251280787.file.myqcloud.com/post/1599904973131-a16d23f0-29ce-4955-9231-73d384c57b86.png)
 V2Ray 核心不区分客户端和服务端，因此 V2Ray 官方未提供各平台的 GUI 客户端。许多第三方开发人员基于 V2Ray 核心开发了适用于各平台的 GUI 客户端，因此每个平台均有多个客户端可供选择。这里收集了 v2ray 各端客户端版本的介绍和下载，这里只是收藏避免用的时候找不到。:::
 
-## Windows 客户端\*\*
+## Windows 客户端
 
 最新版 v2ray Windows 客户端下载链接：
 
