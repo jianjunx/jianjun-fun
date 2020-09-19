@@ -28,7 +28,7 @@
       </div>
     </header>
     <% } %>
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry <%= index?'article-entry_index':'' %>" itemprop="articleBody">
       <% if (index){ %>
       <p class="index-excerpt">
         <%- post.excerpt ? post.excerpt : (function(content){
