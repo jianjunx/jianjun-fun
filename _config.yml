@@ -148,4 +148,4 @@ deploy:
   connection:
     host: 23.224.152.95
     port: 21
-  # root: /jianjun.fun
+  root: /jianjun.fun
