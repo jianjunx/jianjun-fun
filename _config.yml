@@ -146,6 +146,6 @@ theme: xfun
 deploy:
   type: ftpsy
   connection:
-    host: admin.jianjun.fun
+    host: 23.224.152.95
     port: 21
   root: /jianjun.fun
