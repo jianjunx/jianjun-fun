@@ -2,8 +2,8 @@
 title: JS格式化Excel解析的5位日期戳
 urlname: ptdm9t
 date: 2020-11-25 11:10:00 +0000
-tags: []
-categories: []
+tags: [Excel,日期]
+categories: [前端]
 ---
 
 ![image.png](https:/jianjun-1251280787.file.myqcloud.com/post/1606302274151-0139b104-c9e5-4485-8eed-174126c91e63.png)
